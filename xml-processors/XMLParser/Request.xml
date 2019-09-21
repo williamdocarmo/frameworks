@@ -1,0 +1,12 @@
+<ns:CreateUser xmlns:ns="http://schemas.myorganization.com/UserService">
+	<ns:User id="U1710256">
+		<ns:Service id="Mobile">
+			<ns:MSISDN>+911234567890</ns:MSISDN>
+			<ns:ServiceType>LTE</ns:ServiceType>
+		</ns:Service>
+		<ns:Service id="Broadband">
+			<ns:Username>santanu.bh</ns:Username>
+			<ns:ServiceType>UL100MBPS</ns:ServiceType>
+		</ns:Service>
+	</ns:User>
+</ns:CreateUser>
