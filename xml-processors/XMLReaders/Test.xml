@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+	<employee id="1">
+		<name>Santanu</name>
+		<address>
+			<city>Pune</city>
+			<zip>1234</zip>
+		</address>
+	</employee>
+	<employee id="2">
+		<name>Ratul</name>
+		<address>
+			<city>Bangalore</city>
+			<zip>5678</zip>
+		</address>
+	</employee>
+</employees>

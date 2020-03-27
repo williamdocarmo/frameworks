@@ -1,0 +1,24 @@
+<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e.-->
+<xs:schema version="1.0" targetNamespace="http://address.service.soap.com/" xmlns:tns="http://address.service.soap.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="findSubscriber" type="tns:findSubscriber"/>
+   <xs:element name="findSubscriberResponse" type="tns:findSubscriberResponse"/>
+   <xs:complexType name="findSubscriber">
+      <xs:sequence>
+         <xs:element name="subscriberNumber" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="findSubscriberResponse">
+      <xs:sequence>
+         <xs:element name="GetSubscriber" type="tns:subscriberData" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subscriberData">
+      <xs:sequence>
+         <xs:element name="billCycle" type="xs:int"/>
+         <xs:element name="connectionStartDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+         <xs:element name="offer" type="xs:string" minOccurs="0"/>
+         <xs:element name="postpaid" type="xs:boolean"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

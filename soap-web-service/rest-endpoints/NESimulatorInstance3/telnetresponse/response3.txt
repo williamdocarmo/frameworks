@@ -1,0 +1,6 @@
+LOCATION DATA
+VLR ADDRESS       MSRN            MSC NUMBER          LMSID
+4-4540150034                      4540150034         
+
+SGSN NUMBER
+4-4540150057     

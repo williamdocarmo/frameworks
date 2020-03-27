@@ -1,0 +1,66 @@
+Array
+Object Oriented Programming
+	Interfaces
+	Abstract Classes
+Exception Handling
+Collection Framework
+	List 
+		How List Works
+		ArrayList, LinkedList etc
+	Set
+	How Set Works
+		HashSet, LinkedHashSet, TreeSet etc
+	Iterator
+	Map
+		How Map Works
+		HashMap, LinkedHashMap, TreeMap, AbstractMap, EnumMap, WeakHashMap, IdentityHashMap
+		HashTable, Properties etc
+	Queue and Dequeue
+String Handling
+	How operations work
+	Immutability
+	String Builder and String Buffer
+	String Algorithms
+Enumeration
+Autoboxing
+Reflection API
+Generics
+Annotations
+Serialization
+File Handling
+JVM Architecture
+Garbage Collection and Finalize()
+Java.Lang
+	Void
+	Process
+	ProcessBuilder
+	Runtime
+	System
+	Object
+	ClassLoader
+	Compiler
+	Throwable
+	SecurityManager
+	Iterable
+	Readable
+	Closeable
+	Cloning
+Java Class Loader
+Lambda Expression
+Stream API
+Core Java Design Patterns
+Multi Threading
+	Multi Threading
+	Concurrency
+	Thread Pool
+	Executor Framework
+Network Programming
+	HTTP
+	TCP
+	LDAP
+	SSH
+Java Security
+Java Performance Monitoring
+JDK Tools
+Batch and Scheduler
+Bytecode Libraries

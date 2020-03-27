@@ -1,0 +1,54 @@
+Page 1- Personal Details (Label):
+	First Name (Text Field)
+	Last Name (Text Field)
+	Permanent Address (Multiple Text Field)
+	Date of Birth (Date Picker)
+	Upload Image (File Chooser)
+	Gender (Radio Button)
+	Primary Language (Choice Box)
+	Marital Status (List View)
+	Submit (Button) -- (will take to Page 2)
+	Use some Separators
+
+Page 2- Educational Qualification
+	Educational Qualification (Toggle Button)
+	Percentage (Slider)- will appear for each of the Educations (10, 12, UG, PG)
+	Full Time (Checkbox)- will appear for each of the Educations (10, 12, UG, PG)
+
+Page 3- Professional Qualification
+	Certificate List (Multiple Text box, can add using + button)
+	Organization List (Multiple Text box, can add using + button)
+		Duration (from/to)
+	Technology Details (Multiple Text box, can add using + button)
+		Proficiency (Radio)
+
+
+
+Page 5- Upload Documents
+	Upload CV (File Chooser)
+	File upload Progress (Progress Bar)
+	Write your own CV (HTML Editor)
+	Add Linkedin Profile (Hyperlink)
+	3 References (Table View)
+
+Page 6- Credentials
+	User name (Text Field)
+	Password (Password with Tooltip)
+
+Page 7- Communication
+	Phone Number
+	Email ID
+	Communication Address
+	Can Communicate (Checkbox for all 3)
+
+
+
+LeftOut:
+	Tree View
+	Tree Table View
+	Combo Box
+	Titled Pane and Accordion
+	Menu
+	Pagination
+	Scroll Bar
+	Embedded Platforms

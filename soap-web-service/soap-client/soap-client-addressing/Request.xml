@@ -1,0 +1,15 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:impl="http://impl.service.soap.com/">
+	<soapenv:Header />
+	<soapenv:Body>
+		<impl:uploadImage>
+			<arg0>
+				<billCycle>30</billCycle>
+				<msisdn>9903123499</msisdn>
+				<offer>UL-VOICE</offer>
+				<postpaid>true</postpaid>
+			</arg0>
+		</impl:uploadImage>
+	</soapenv:Body>
+</soapenv:Envelope>

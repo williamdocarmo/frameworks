@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). 
+	RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. -->
+<xs:schema xmlns:tns="http://webservice.service.soap.com/"
+	xmlns:ns1="http://custom.namespace.com"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+	targetNamespace="http://webservice.service.soap.com/">
+
+	<xs:import namespace="http://custom.namespace.com"
+		schemaLocation="http://localhost:10001/SoapWS/Core/Mobile?xsd=2"></xs:import>
+
+	<xs:element name="Credentials" nillable="true"
+		type="tns:securityDetails"></xs:element>
+
+	<xs:element name="MobileException"
+		type="tns:MobileSubscriptionException"></xs:element>
+
+	<xs:element name="SecurityException"
+		type="tns:SecurityException"></xs:element>
+
+	<xs:element name="UserData" type="tns:subscriberData"></xs:element>
+
+	<xs:element name="countAsync" type="tns:countAsync"></xs:element>
+
+	<xs:element name="createSubscriber"
+		type="tns:createSubscriber"></xs:element>
+
+	<xs:element name="createSubscriberResponse"
+		type="tns:createSubscriberResponse"></xs:element>
+
+	<xs:element name="createSubscriberSecure"
+		type="tns:createSubscriberSecure"></xs:element>
+
+	<xs:element name="createSubscriberSecureResponse"
+		type="tns:createSubscriberSecureResponse"></xs:element>
+
+	<xs:element name="deleteSubscriber"
+		type="tns:deleteSubscriber"></xs:element>
+
+	<xs:element name="deleteSubscriberResponse"
+		type="tns:deleteSubscriberResponse"></xs:element>
+
+	<xs:element name="findSubscriber" type="tns:findSubscriber"></xs:element>
+
+	<xs:element name="findSubscriberResponse"
+		type="tns:findSubscriberResponse"></xs:element>
+
+	<xs:element name="getAllSubscribers"
+		type="tns:getAllSubscribers"></xs:element>
+
+	<xs:element name="getAllSubscribersResponse"
+		type="tns:getAllSubscribersResponse"></xs:element>
+
+	<xs:element name="getDummySubscriber"
+		type="tns:getDummySubscriber"></xs:element>
+
+	<xs:element name="getDummySubscriberResponse"
+		type="tns:getDummySubscriberResponse"></xs:element>
+
+	<xs:element name="getSecureToken" type="tns:getSecureToken"></xs:element>
+
+	<xs:element name="getSecureTokenResponse"
+		type="tns:getSecureTokenResponse"></xs:element>
+
+	<xs:element name="greet" type="tns:greet"></xs:element>
+
+	<xs:element name="greetResponse" type="tns:greetResponse"></xs:element>
+
+	<xs:element name="greetUser" type="tns:greetUser"></xs:element>
+
+	<xs:element name="greetUserResponse"
+		type="tns:greetUserResponse"></xs:element>
+
+	<xs:element name="password" nillable="true" type="xs:string"></xs:element>
+
+	<xs:element name="throwError" type="tns:throwError"></xs:element>
+
+	<xs:element name="throwErrorResponse"
+		type="tns:throwErrorResponse"></xs:element>
+
+	<xs:element name="tokenvalue" nillable="true"
+		type="xs:string"></xs:element>
+
+	<xs:element name="username" nillable="true" type="xs:string"></xs:element>
+
+	<xs:complexType name="greet">
+		<xs:sequence>
+			<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="greetResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="countAsync">
+		<xs:sequence>
+			<xs:element name="counter" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="findSubscriber">
+		<xs:sequence>
+			<xs:element name="subscriberNumber" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="findSubscriberResponse">
+		<xs:sequence>
+			<xs:element name="createSubscriberSecureResponse"
+				type="tns:subscriberData" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="subscriberData">
+		<xs:sequence>
+			<xs:element name="billCycle" type="xs:int"></xs:element>
+			<xs:element name="connectionStartDate" type="xs:dateTime"
+				minOccurs="0"></xs:element>
+			<xs:element name="phoneNumber" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="offer" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="postpaid" type="xs:boolean"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="customer" type="xs:string"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="throwError">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="throwErrorResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MobileSubscriptionException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getSecureToken">
+		<xs:sequence>
+			<xs:element name="randomText" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getSecureTokenResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getDummySubscriber">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getDummySubscriberResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:subscriberData"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="createSubscriber">
+		<xs:sequence>
+			<xs:element name="createSubscriberRequest"
+				type="tns:subscriberData" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="createSubscriberResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getAllSubscribers">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getAllSubscribersResponse">
+		<xs:sequence>
+			<xs:element name="Subscriber" type="tns:subscriberData"
+				minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="greetUser">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="greetUserResponse">
+		<xs:sequence>
+			<xs:element name="greetingsMessage" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="createSubscriberSecure">
+		<xs:sequence>
+			<xs:element name="createSubscriberSecureRequest"
+				type="tns:subscriberData" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="securityDetails">
+		<xs:sequence>
+			<xs:element name="password" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="username" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="createSubscriberSecureResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SecurityException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="deleteSubscriber">
+		<xs:sequence>
+			<xs:element ref="ns1:subscriberNumber" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="deleteSubscriberResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+</xs:schema>

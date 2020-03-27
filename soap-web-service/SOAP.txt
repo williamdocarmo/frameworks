@@ -1,0 +1,51 @@
+SOAP Web Services Development:
+	Core Java JAX-WS Web Services:
+		Publisher:
+			Basic Web Service Development
+			Understanding WSDL and XSD
+			Customizing WSDL- WebService and WebMethod
+			Customizing WSDL- WebParam and WebResult
+			Customizing WSDL- Parameter Modes and Holder Variables
+			Customizing WSDL- Adding SOAP Headers
+			Customizing WSDL- OneWay Operations
+			Service Endpoint Interface
+			Customizing WSDL- JAXB Annotations
+			SOAP Handler- Intercepting the Whole Message
+			SOAP Handler- Intercepting the SOAP Headers and HTTP Headers
+			SOAP Handler- Reading SOAP Attachments
+			Resource Annotations and Callback Methods
+			WebServiceProvider
+			MIME and MTOM
+			SOAP with Attachments API for Java (SAAJ)
+			Web Service Addressing (WS Addressing)
+			SOAP Asynchronous Transport
+			WS Reliable Messaging
+			Web Service Security- WS Security
+			Web Service Security- Basic Authentication
+			Publishing Web Service using Axis
+			Publishing Web Service using CXF
+
+		Client:
+			Client Development using WSIMPORT
+			Message Intecepting in WSIMPORT Clients
+			Security in WSIMPORT Clients
+			Client Development using CXF
+			Message Intercepting in CXF Clients
+			Security in CXF Clients
+			Client Development using Apache Axis
+			Message Intercepting in Apache Axis Clients
+			Security in Apache Axis Clients
+			Client Development using SAAJ
+			Message Intercepting in SAAJ Clients
+			Security in Apache SAAJ Clients
+
+	Publishing SOAP Web Service using EJB (Weblogic)
+	Publishing SOAP Web Service using Servlet (Tomcat)
+	Asynchronous SOAP Web Service using JMS (Weblogic)
+
+
+SOAP Web Services Testing:
+	SOAP UI Configuration
+	Mocking in SOAP UI
+	Client Generation using SOAP UI
+	Load Testing using SOAP UI
