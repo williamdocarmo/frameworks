@@ -137,7 +137,7 @@ public class Application {
 		Class<CommonUtils> clazz = CommonUtils.class;
 		Method print = clazz.getDeclaredMethod("print", String.class);
 		print.setAccessible(true);
-		print.invoke(null, "This is a reflection test class!");
+		print.invoke(null, "Test Reflection!");
 	}
 
 }

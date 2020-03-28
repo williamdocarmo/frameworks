@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "empDetails", namespace = "http://com/reflection/app")
 @WebService(portName = "employeePort", serviceName = "employeeService")
