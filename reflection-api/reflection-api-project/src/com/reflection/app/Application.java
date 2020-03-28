@@ -24,7 +24,8 @@ public class Application {
 		instantiateClassMethod();
 		analyzeClassConstructors();
 		analyzeClassVariables();
-		getSetObjectValuesUsingVariables();
+		getObjectValuesUsingVariables();
+		setObjectValuesUsingVariables();
 		analyzeClassMethods();
 		invokeClassMethods();
 		analyzeClassAnnotations();
@@ -63,7 +64,15 @@ public class Application {
 		}
 	}
 	
-	private static void getSetObjectValuesUsingVariables() throws IllegalArgumentException, IllegalAccessException {
+	private static void getObjectValuesUsingVariables() throws IllegalArgumentException, IllegalAccessException {
+		Employee employee = new Employee("EmpId1", "Empfname Emplname", 35, "Developer", null);
+		Field[] fields = employee.getClass().getDeclaredFields();
+		for (Field field : fields) {
+			System.out.println("Field: "+field.getName()+" :: Value: "+field.get(employee));
+		}
+	}
+	
+	private static void setObjectValuesUsingVariables() throws IllegalArgumentException, IllegalAccessException {
 		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Employee employee = new Employee();
 		Class<? extends Employee> clazz = employee.getClass();
@@ -78,9 +87,6 @@ public class Application {
 			}
 		}
 		System.out.println("Employee: "+employee);
-		for (Field field : fields) {
-			System.out.println("Field: "+field.getName()+" :: Value: "+field.get(employee));
-		}
 	}
 	
 	private static void analyzeClassMethods() throws IllegalArgumentException, IllegalAccessException {
