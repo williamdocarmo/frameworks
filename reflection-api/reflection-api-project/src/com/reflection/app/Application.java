@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.reflection.app.util.CommonUtils;
 import com.reflection.app.vo.Employee;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "unchecked"})
 public class Application {
 	
 	private static String defaultString = "DefaultValue";
