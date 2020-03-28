@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.reflection.app.util.CommonUtils;
 import com.reflection.app.vo.Employee;
 
 public class Application {
@@ -18,14 +19,16 @@ public class Application {
 	private static String defaultString = "DefaultValue";
 	private static int defaultInt = 30;
 
-	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException {
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		// instantiateClassMethod1();
 		// analyzeClassConstructors();
 		// analyzeClassVariables();
 		// getSetObjectValuesUsingVariables();
 		// analyzeClassMethods();
 		// invokeClassMethods();
-		analyzeClassAnnotations();
+		// analyzeClassAnnotations();
+		callStaticMethod();
+		// callPrivateMethod();
 	}
 
 	private static void instantiateClassMethod1() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
@@ -109,6 +112,22 @@ public class Application {
 		System.out.println("XML Root Element: "+xmlRoot.name()+" "+xmlRoot.namespace());
 		WebService webService = (WebService) clazz.getAnnotation(WebService.class);
 		System.out.println("Web Service: "+webService.portName()+" "+webService.serviceName());
+	}
+	
+	private static void callStaticMethod() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		Class clazz = CommonUtils.class;
+		Method getCurrentDay = clazz.getMethod("getCurrentDay");
+		System.out.println(getCurrentDay.invoke(null));
+		
+		Method calculateSum = clazz.getDeclaredMethod("calculateSum", int.class, Integer.class);
+		System.out.println(calculateSum.invoke(null, 5, new Integer(10)));
+	}
+	
+	private static void callPrivateMethod() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		Class clazz = CommonUtils.class;
+		Method print = clazz.getDeclaredMethod("print", String.class);
+		print.setAccessible(true);
+		print.invoke(null, "This is a reflection test class!");
 	}
 
 }
