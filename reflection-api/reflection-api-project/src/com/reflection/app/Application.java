@@ -33,6 +33,7 @@ public class Application {
 	}
 
 	private static void instantiateClassMethod() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Employee employee1 = Employee.class.newInstance();
 		employee1.setEmployeeId("Emp1").setEmployeeName("Fname1 Lname1").setAge(30).setDesignation("Senior Developer").setAddress(new ArrayList<String>());
 		System.out.println("Employee: " + employee1);
@@ -41,9 +42,10 @@ public class Application {
 	}
 
 	private static void analyzeClassConstructors() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<Employee> clazz = Employee.class;
 		Object object = null;
-		Constructor[] constructors = clazz.getConstructors();
+		Constructor<Employee>[] constructors = (Constructor<Employee>[]) clazz.getConstructors();
 		for (Constructor<?> constructor : constructors) {
 			if (constructor.getParameterCount() > 0) {
 				object = constructor.newInstance("Emp3", "Fname3 Lname3", 35, "Solution Architect", null);
@@ -53,6 +55,7 @@ public class Application {
 	}
 	
 	private static void analyzeClassVariables() throws IllegalArgumentException, IllegalAccessException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<Employee> clazz = Employee.class;
 		Field[] fields = clazz.getDeclaredFields();
 		for (Field field : fields) {
@@ -61,6 +64,7 @@ public class Application {
 	}
 	
 	private static void getSetObjectValuesUsingVariables() throws IllegalArgumentException, IllegalAccessException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Employee employee = new Employee();
 		Class<? extends Employee> clazz = employee.getClass();
 		Field[] fields = clazz.getDeclaredFields();
@@ -80,6 +84,7 @@ public class Application {
 	}
 	
 	private static void analyzeClassMethods() throws IllegalArgumentException, IllegalAccessException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<Employee> clazz = Employee.class;
 		Method[] methods = clazz.getDeclaredMethods();
 		for (Method method : methods) {
@@ -88,6 +93,7 @@ public class Application {
 	}
 	
 	private static void invokeClassMethods() throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Employee employee = new Employee();
 		Class<? extends Employee> clazz = employee.getClass();
 		Method[] methods = clazz.getDeclaredMethods();
@@ -108,6 +114,7 @@ public class Application {
 	}
 	
 	private static void analyzeClassAnnotations() throws IllegalArgumentException, IllegalAccessException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<Employee> clazz = Employee.class;
 		XmlRootElement xmlRoot = clazz.getAnnotation(XmlRootElement.class);
 		System.out.println("XML Root Element: "+xmlRoot.name()+" "+xmlRoot.namespace());
@@ -116,6 +123,7 @@ public class Application {
 	}
 	
 	private static void callStaticMethod() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<CommonUtils> clazz = CommonUtils.class;
 		Method getCurrentDay = clazz.getMethod("getCurrentDay");
 		System.out.println(getCurrentDay.invoke(null));
@@ -125,6 +133,7 @@ public class Application {
 	}
 	
 	private static void callPrivateMethod() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		System.out.println("Executing: "+new Throwable().getStackTrace()[0].getMethodName());
 		Class<CommonUtils> clazz = CommonUtils.class;
 		Method print = clazz.getDeclaredMethod("print", String.class);
 		print.setAccessible(true);
