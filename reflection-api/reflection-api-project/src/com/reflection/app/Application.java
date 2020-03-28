@@ -21,15 +21,15 @@ public class Application {
 	private static int defaultInt = 30;
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		// instantiateClassMethod();
-		// analyzeClassConstructors();
-		// analyzeClassVariables();
-		// getSetObjectValuesUsingVariables();
-		// analyzeClassMethods();
-		// invokeClassMethods();
-		// analyzeClassAnnotations();
+		instantiateClassMethod();
+		analyzeClassConstructors();
+		analyzeClassVariables();
+		getSetObjectValuesUsingVariables();
+		analyzeClassMethods();
+		invokeClassMethods();
+		analyzeClassAnnotations();
 		callStaticMethod();
-		// callPrivateMethod();
+		callPrivateMethod();
 	}
 
 	private static void instantiateClassMethod() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
