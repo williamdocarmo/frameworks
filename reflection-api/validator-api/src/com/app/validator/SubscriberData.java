@@ -75,6 +75,18 @@ public class SubscriberData {
 	public void setIpv4Address(String ipv4Address) {
 		this.ipv4Address = ipv4Address;
 	}
+	
+	public SubscriberData(String imsi, String isdn, String bsg, int hlrsn, String tcsiprov, String ocsiprov,
+			String ipv4Address) {
+		super();
+		this.imsi = imsi;
+		this.isdn = isdn;
+		this.bsg = bsg;
+		this.hlrsn = hlrsn;
+		this.tcsiprov = tcsiprov;
+		this.ocsiprov = ocsiprov;
+		this.ipv4Address = ipv4Address;
+	}
 
 	@Override
 	public String toString() {

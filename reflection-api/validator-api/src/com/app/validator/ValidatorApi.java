@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 
 public class ValidatorApi {
 	
-	public static void validate(Object obj) throws IllegalArgumentException, IllegalAccessException {
+	public static String validate(Object obj) throws IllegalArgumentException, IllegalAccessException {
+		String validatorError = "";
 		Field[] fields = obj.getClass().getDeclaredFields();
 		for (Field field : fields) {
 			field.setAccessible(true);
@@ -21,17 +22,16 @@ public class ValidatorApi {
 					allowedValues.add(str);
 				}
 				// Null check
-				String validatorError = "";
 				if (isNull("" + fieldValue)) {
 					if (val.nullcheck()) {
-						validatorError = "Field " + fieldname + " Cannot be null.";
+						validatorError += "Field " + fieldname + " Cannot be null.";
 					}
 				} else {
 					// Allowed Values Check
 					boolean isAllowedValuesAvailable = allowedValues.size() > 1 ? true
 							: !isNull(allowedValues.get(0)) ? true : false;
 					if (isAllowedValuesAvailable && !allowedValues.contains(fieldValue.toString())) {
-						validatorError = "Field " + fieldname + " val is " + fieldValue + " allowed value is " + allowedValues + ".";
+						validatorError += "Field " + fieldname + " val is " + fieldValue + " allowed value is " + allowedValues + ".";
 					}
 					// Range Check
 					if (val.maxVal() != Long.MAX_VALUE || val.minVal() != Long.MIN_VALUE) {
@@ -39,17 +39,17 @@ public class ValidatorApi {
 						try {
 							intFieldVal = Integer.parseInt(fieldValue.toString().trim());
 						} catch (NumberFormatException e) {
-							validatorError = "Field " + fieldname + " is not in correct format, should be integer.";
+							validatorError += "Field " + fieldname + " is not in correct format, should be integer.";
 						}
 						if (intFieldVal > val.maxVal() || intFieldVal < val.minVal()) {
-							validatorError = "Field " + fieldname + " not in range, correct range is: [" + val.minVal() + "," + val.maxVal() + "].";
+							validatorError += "Field " + fieldname + " not in range, correct range is: [" + val.minVal() + "," + val.maxVal() + "].";
 						}
 					}
 					// length check
 					if (val.maxLength() != Integer.MAX_VALUE || val.minVal() != Integer.MIN_VALUE) {
 						int valueLength = ("" + fieldValue).length();
 						if (valueLength > val.maxLength() || valueLength < val.minLength()) {
-							validatorError = "Field " + fieldname + " length is invalid, correct lenght should be within : [" + val.minLength() + "," + val.maxLength() + "].";
+							validatorError += "Field " + fieldname + " length is invalid, correct length should be within : [" + val.minLength() + "," + val.maxLength() + "].";
 						}
 					}
 					// Regex validation
@@ -57,21 +57,22 @@ public class ValidatorApi {
 						Pattern pattern = Pattern.compile(val.regex());
 						Matcher matcher = pattern.matcher(String.valueOf(fieldValue));
 						if (!matcher.find()) {
-							validatorError = "Field " + fieldname + " does not match the pre-defined pattern.";
+							validatorError += "Field " + fieldname + " does not match the pre-defined pattern.";
 						}
 					}
 					//Startswith Check
 					if(!isNull(val.startsWith()) && !String.valueOf(fieldValue).startsWith(val.startsWith())){
-						validatorError = "Field " + fieldname + " should start with "+val.startsWith()+ ".";
+						validatorError += "Field " + fieldname + " should start with "+val.startsWith()+ ".";
 					}
 					
 				}
-				if (validatorError.length() > 0) {
-					validatorError = validatorError + " Bean name: " + obj.getClass().getSimpleName();
-					throw new IllegalArgumentException(validatorError);
-				}
+				
 			}
 		}
+		if (validatorError.length() > 0) {
+			validatorError = " Bean name: " + obj.getClass().getSimpleName()+": "+validatorError;
+		}
+		return validatorError;
 	}
 	
 	public static boolean isNull(final CharSequence charSeq) {
