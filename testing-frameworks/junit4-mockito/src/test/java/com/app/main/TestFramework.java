@@ -46,6 +46,8 @@ public class TestFramework {
 	private void populateRequestMap() {
 		requestMap = new HashMap<String, String>();
 		requestMap.put("testExecuteCreate", "CreateSubscriber.xml");
+		requestMap.put("testExecuteDelete", "DeleteSubscriber.xml");
+		requestMap.put("testExecuteGet", "GetSubscriber.xml");
 	}
 	
 	private void populateResponseMap() {
@@ -55,22 +57,11 @@ public class TestFramework {
 		responseMap.put("GET", "GET:SUCCESSFUL");
 	}
 
-	public void executeTestcase(String testcaseName) throws SAXException, IOException, ParserConfigurationException, IllegalAccessException {
+	public void executeTestcase(String testcaseName, String expected) throws SAXException, IOException, ParserConfigurationException, IllegalAccessException {
 		String requestFile = requestMap.get(testcaseName);
 		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("src/test/resources/"+requestFile);
-		String response = "";
-		boolean isException = false;
-		try{
-			response = applicationInstance.execute(document);
-			System.out.println("Response "+response);
-		} catch (Exception e) {
-			isException = true;
-		}
-		if (testcaseName.endsWith("Failed")) {
-			assertTrue(isException);
-		} else {
-			assertTrue(response.contains("SUCCESSFUL"));
-		}
+		String response = applicationInstance.execute(document);
+		assertEquals(expected, response);
 	}
 	
 	public void analyzeMockito() {
