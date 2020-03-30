@@ -1,21 +1,19 @@
 package com.app.main;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Before;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.app.libclasses.ServerContext;
 
@@ -23,8 +21,8 @@ public class TestFramework {
 	
 	private Application applicationInstance;
 	
-	private HashMap<String, String> requestMap;
-	private HashMap<String, String> responseMap;
+	private HashMap<String, String> clientRequestMap;
+	private HashMap<String, String> serverResponseMap;
 	
 	@Before
 	public void setup() throws IllegalAccessException {
@@ -32,39 +30,48 @@ public class TestFramework {
 		populateResponseMap();
 		applicationInstance = new Application();
 		ServerContext context = mock(ServerContext.class);
-		// when(context.executeServerOperation(any(String.class), any(String.class))).thenReturn("Operation Executed in Mock Lib Class with argument: Request Value");
-		when(context.executeServerOperation(any(String.class))).thenAnswer(new Answer<String>() {
+		// when(context.executeServerOperation(any(String.class), any(String.class))).thenReturn("Operation Executed in Mock Object");
+		when(context.executeServerOperation(anyString())).thenAnswer(
+			new Answer<String>() {
 			public String answer(InvocationOnMock invocation) throws Throwable {
 				String request = (String) invocation.getArguments()[0];
 				String command = request.split(":")[0];
-				return responseMap.get(command);
+				return serverResponseMap.get(command);
 			}
 		});
 		ServerHandler.getInstance().setServerContext(context);
 	}
 	
 	private void populateRequestMap() {
-		requestMap = new HashMap<String, String>();
-		requestMap.put("testExecuteCreate", "CreateSubscriber.xml");
-		requestMap.put("testExecuteDelete", "DeleteSubscriber.xml");
-		requestMap.put("testExecuteGet", "GetSubscriber.xml");
+		clientRequestMap = new HashMap<String, String>();
+		clientRequestMap.put("testExecuteCreate", "CreateSubscriber.xml");
+		clientRequestMap.put("testExecuteDelete", "DeleteSubscriber.xml");
+		clientRequestMap.put("testExecuteGet", "GetSubscriber.xml");
 	}
 	
 	private void populateResponseMap() {
-		responseMap = new HashMap<String, String>();
-		responseMap.put("CREATE", "CREATE:SUCCESSFUL");
-		responseMap.put("DELETE", "DELETE:SUCCESSFUL");
-		responseMap.put("GET", "GET:SUCCESSFUL");
+		serverResponseMap = new HashMap<String, String>();
+		serverResponseMap.put("CREATE", "CREATE:SUCCESSFUL");
+		serverResponseMap.put("DELETE", "DELETE:SUCCESSFUL");
+		serverResponseMap.put("GET", "GET:SUCCESSFUL");
 	}
 
-	public void executeTestcase(String testcaseName, String expected) throws SAXException, IOException, ParserConfigurationException, IllegalAccessException {
-		String requestFile = requestMap.get(testcaseName);
-		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("src/test/resources/"+requestFile);
+	public void executeTestcase(String testcaseName, String expected) throws Exception {
+		String requestFile = clientRequestMap.get(testcaseName);
+		Document document = parseDocument(getClass().getClassLoader().getResourceAsStream(requestFile));
 		String response = applicationInstance.execute(document);
+		System.out.println("Response: "+response);
 		assertEquals(expected, response);
 	}
 	
 	public void analyzeMockito() {
+	}
+	
+	public static Document parseDocument(InputStream inputStream) throws Exception {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		factory.setIgnoringElementContentWhitespace(true);
+		return factory.newDocumentBuilder().parse(inputStream);
 	}
 
 }
