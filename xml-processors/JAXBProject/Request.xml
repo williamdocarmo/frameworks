@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:EmployeeDetails xmlns:ns2="http://vo.app.jaxb.com" EmployeeId="esnubya">
+    <ns2:EmployeeName>Santanu Bhattacharyya</ns2:EmployeeName>
+    <ns2:EmployeeAge>30</ns2:EmployeeAge>
+    <ns2:EmployeeAddress AddressType="1">
+        <ns2:StreetName>8/B Bhattacharjee Lane</ns2:StreetName>
+        <ns2:City>Serampore</ns2:City>
+        <ns2:Pincode>712201</ns2:Pincode>
+    </ns2:EmployeeAddress>
+    <ns2:EmployeeAddress AddressType="2">
+        <ns2:StreetName>DLF-2 IT Park</ns2:StreetName>
+        <ns2:City>New Town</ns2:City>
+        <ns2:Pincode>700156</ns2:Pincode>
+    </ns2:EmployeeAddress>
+</ns2:EmployeeDetails>
