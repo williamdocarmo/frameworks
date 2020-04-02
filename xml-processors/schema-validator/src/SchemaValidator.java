@@ -15,14 +15,14 @@ public class SchemaValidator {
 	public static void main(String[] args) throws SAXException, IOException {
 		String[] files = new String[] {"correct-request.xml", "incorrect-request.xml"};
 		Validator validator = validator(new String[] {"MobileService.xsd"});
-			for (String file : files) {
-				try{
-					validator.validate(new StreamSource(new File(file)));
-					System.out.println(file+ " Validated Successfully.");
-				} catch(Exception e) {
-					System.out.println(file+ " Failed With Error: "+e.getMessage());
-				}
+		for (String file : files) {
+			try {
+				validator.validate(new StreamSource(new File(file)));
+				System.out.println(file + " Validated Successfully.");
+			} catch (Exception e) {
+				System.out.println(file + " Failed With Error: " + e.getMessage());
 			}
+		}
 	}
 
 	public static Validator validator(String[] xsdPaths) throws SAXException {
