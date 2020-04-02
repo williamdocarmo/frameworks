@@ -1,6 +1,7 @@
 package com.jaxb.app;
 
 import java.io.File;
+import java.io.StringWriter;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -18,11 +19,13 @@ public class JAXBApplication {
 	}
 	
 	private static void marshall() throws JAXBException {
-		Object object = ObjectFactory.getObject();
+		Object object = ObjectMaker.makeObject();
+		StringWriter writer = new StringWriter();
 		JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
 		Marshaller marshaller = jaxbContext.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		marshaller.marshal(object, System.out);
+		marshaller.marshal(object, writer);
+		System.out.println(writer.toString());
 	}
 
 	private static void unmarshall() throws JAXBException {

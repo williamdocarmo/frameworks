@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "EmployeeDetails", namespace = Employee.NS)
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType (namespace = Employee.NS, propOrder = {"empId", "empName", "addresses", "age"})
+@XmlType (namespace = Employee.NS, propOrder = {"empId", "empName", "age", "addresses"})
 public class Employee {
 
 	public static final String NS = "http://vo.app.jaxb.com";
@@ -31,7 +31,7 @@ public class Employee {
 	private boolean isIntern;
 
 	public String getEmpId() {
-		return empId;
+		return this.empId;
 	}
 
 	public Employee setEmpId(String empId) {
@@ -40,7 +40,7 @@ public class Employee {
 	}
 
 	public String getEmpName() {
-		return empName;
+		return this.empName;
 	}
 
 	public Employee setEmpName(String empName) {
@@ -49,7 +49,7 @@ public class Employee {
 	}
 
 	public int getAge() {
-		return age;
+		return this.age;
 	}
 
 	public Employee setAge(int age) {
@@ -58,7 +58,7 @@ public class Employee {
 	}
 
 	public List<Address> getAddresses() {
-		return addresses;
+		return this.addresses;
 	}
 
 	public Employee setAddresses(List<Address> addresses) {
@@ -67,7 +67,7 @@ public class Employee {
 	}
 
 	public boolean isIntern() {
-		return isIntern;
+		return this.isIntern;
 	}
 
 	public Employee setIntern(boolean isIntern) {
