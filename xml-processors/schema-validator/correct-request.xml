@@ -1,0 +1,7 @@
+<ns:CreateMOVILAUCSUB xmlns:ns="http://schemas.ericsson.com/ma/cai/1.0/">
+	<ns:IMSI>894501000012345</ns:IMSI>
+	<ns:KI>DDIKSDODGIOEFJLWGPIWMLVIWRSFGSFG</ns:KI>
+	<ns:A38>2</ns:A38>
+	<ns:A4>0</ns:A4>
+	<ns:ADKEY>5</ns:ADKEY>
+</ns:CreateMOVILAUCSUB>
