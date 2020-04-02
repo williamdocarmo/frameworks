@@ -1,0 +1,839 @@
+<xs:schema xmlns="http://schemas.ericsson.com/ma/cai/1.0/" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:cai3g="http://schemas.ericsson.com/cai3g1.2/" xmlns:ns1="http://schemas.ericsson.com/ma/cai/1.0/"
+targetNamespace="http://schemas.ericsson.com/ma/cai/1.0/" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.0">
+	
+	<xs:element name="IMSI" type="IMSIType"/>
+	<xs:element name="MSISDN" type="MSISDNType"/>
+	
+	<xs:element name="CreateMOVILAUCSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+			    <xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="KI" type="KIType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="A38" type="A38Type" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="A4" type="A4Type" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="ADKEY" type="ADKeyType" minOccurs="1" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CreateMOVILHLRSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="PROFILE" type="int" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="AUTHD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAT" type="CategoryType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AMSISDN" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS11" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS61" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS62" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS23" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS24" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS25" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS26" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS31" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS32" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS33" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS34" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBI" type="OBIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBO" type="OBOType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBR" type="OBRType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRE" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBA" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCB" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAOC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BICRO" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIEXH" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBSSM" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAW" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="HOLD" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="MPTY" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCOLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SODCF" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFU" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFB" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRY" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRC" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DCF" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFU" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFB" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRY" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NAM" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GPRS" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAMEL" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUGSUB" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUG" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PWD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LOC" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="STYPE" type="SType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TEARDOWN" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SCHAR" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="USERTYPE" type="UserType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ARD" type="ARDType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CSP" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LTE" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VMS" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="EPSDATA" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CreateMOVILPOSSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="NewSupervisionPeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NewServiceFeePeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceClass" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Offers" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OperatorID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Paquete" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CommunityIdListNew" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Profile" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IMSI" type="IMSIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GPRS" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="HLR" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AIRHLR" type="AIRHLRType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Language" type="LanguageType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SIM" type="SIMNumberType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PUK1" type="PUKNumberType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TempBlockingStatus" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="USERTYPE" type="UserType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LTE" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CreateMOVILIMSICH">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="NIMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CreateVOICEMAIL">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+			    <xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="NETWORK" type="NetworkType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="LANGUAGE" type="LanguageType" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetMOVILAUCSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="AKATYPE" type="AkaType" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetResponseMOVILAUCSUB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IMSI" type="IMSIType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="KI" type="KIType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="A38" type="A38Type" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="A4" type="A4Type" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="ADKEY" type="ADKeyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AKATYPE" type="AkaType" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetMOVILHLRSUB" type="IMSIAndMSISDN"/>
+	
+	<xs:element name="GetResponseMOVILHLRSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="PROFILE" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AUTHD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAT" type="CategoryType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AMSISDN" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS11" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS61" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS62" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS23" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS24" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS25" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS26" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS31" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS32" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS33" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS34" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBI" type="OBIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBO" type="OBOType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBR" type="OBRType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRE" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBA" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCB" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAOC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BICRO" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIEXH" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBSSM" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAW" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="HOLD" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="MPTY" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCOLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SODCF" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFU" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFB" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRY" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRC" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DCF" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFU" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFB" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRY" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NAM" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GPRS" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAMEL" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUGSUB" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUG" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PWD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LOC" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="STYPE" type="SType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TEARDOWN" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SCHAR" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="USERTYPE" type="UserType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ARD" type="ARDType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CSP" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LTE" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VMS" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="EPSDATA" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetMOVILPOSSUB" type="IMSIAndMSISDN"/>
+	
+	<xs:element name="GetResponseMOVILPOSSUB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="Status" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceClass" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceClassList" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AccountBalance" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OrigServiceClass" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TempServiceClassExpDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PinCode" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SupervisionPeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceFeePeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ActivationDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Currency" type="CurrencyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DedicatedAccounts" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Accumulators" type="ValueMaps" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Offers" type="ValueMaps" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="PAM" type="ValueMaps" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="SHAREACCOUNT" type="ValueMaps" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FAF" type="ValueMaps" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CommunityIdList" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetMOVILPPAYSUB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VoucherSerialNumber" type="string" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetResponseMOVILPPAYSUB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VoucherSerialNumber" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VoucherStatus" type="VoucherStatusType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Currency" type="CurrencyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Agent" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BatchID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OperatorID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TimeStamp" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VoucherExpiryDate" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VoucherGroup" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VoucherValue" type="string" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetRVIRTUAL">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="TransactionAmount" type="string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="PaymentProfile" type="PaymentProfileType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="CurrencyType" type="CurrencyType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="TIMEOUT" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OperatorID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="REASONID" type="ReasonType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="APPINFO" type="string" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetResponseRVIRTUAL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Status" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AccountBalanceBefore" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AccountBalance" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TransactionAmount" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PaymentProfile" type="PaymentProfileType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CurrencyType" type="CurrencyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SupervisionPeriodExpiryDateBefore" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceFeePeriodExpiryDateBefore" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SupervisionPeriodExpiryDate" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceFeePeriodExpiryDate" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ResponseTime" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OperatorID" type="CurrencyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="REASONID" type="ReasonType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="APPINFO" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TIMEOUT" type="int" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetCONTROLSUB" type="OnlyMSISDN"/>
+	
+	<xs:element name="GetResponseCONTROLSUB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IMSI" type="IMSIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="STATUS" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IMEI" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CELLID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CELLNAME" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VLR" type="string" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SetMOVILHLRSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="PROFILE" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AUTHD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAT" type="CategoryType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AMSISDN" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NEWMSISDN" type="MSISDNType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS11" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS61" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TS62" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS21" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS22" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS23" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS24" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS25" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS26" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS2G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS31" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS32" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS33" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS34" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3F" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BS3G" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBI" type="OBIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBO" type="OBOType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBR" type="OBRType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRE" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBOPRI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBA" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCB" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BAOC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BICRO" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="BOIEXH" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OBSSM" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAW" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="HOLD" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="MPTY" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCOLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CLIR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLP" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="COLR" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SODCF" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFU" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFB" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRY" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SOCFRC" type="SODCFType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DCF" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFU" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFB" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRY" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CFNRC" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NAM" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GPRS" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CAMEL" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TICK" type="ICKType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TCSI" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUGSUB" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CUG" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PWD" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LOC" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="STYPE" type="SType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TEARDOWN" type="ProvisionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SCHAR" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="USERTYPE" type="UserType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ARD" type="ARDType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CSP" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LTE" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="VMS" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="EPSDATA" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SetMOVILPOSSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="NEWMSISDN" type="MSISDNType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Status" type="StatusType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NewSupervisionPeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NewServiceFeePeriodExpiryDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Currency" type="CurrencyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceClass" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="NewServiceClass" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ServiceClassTemporary" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TempServiceClassExpDate" type="AIRDateType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PinCode" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DedicatedAccounts" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Accumulators" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Offers" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="PAM" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RUNPAM" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="SHAREACCOUNT" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FAF" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Package" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PackagePrice" type="MoneyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ChargingType" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ChargingIndicator" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AdjustmentAmount" type="MoneyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Action" type="AdjustmentActionType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PaymentProfile" type="PaymentProfileType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TransactionAmount" type="MoneyType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="REASONID" type="ReasonType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="APPINFO" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="OperatorID" type="string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Paquete" type="ValueMapsOperation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CommunityIdListNew" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Profile" type="int" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IMSI" type="IMSIType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GPRS" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="HLR" type="ValueMaps" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AIRHLR" type="AIRHLRType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="USERTYPE" type="UserType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LTE" type="ValueMapsOperation" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SetMOVILPPAYSUB">
+		<xs:complexType>
+			<xs:sequence>
+			    <xs:choice>
+			    	<xs:choice maxOccurs="unbounded">
+				    	<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+				    	<xs:element name="VoucherActivationCode" type="string" minOccurs="1" maxOccurs="1"/>
+			    	</xs:choice>
+			    	<xs:choice maxOccurs="unbounded">
+			    		<xs:element name="VoucherSerialNumber" type="string" minOccurs="1" maxOccurs="1"/>
+			    		<xs:element name="NewVoucherStatus" type="VoucherStatusType" minOccurs="1" maxOccurs="1"/>
+			    	</xs:choice>
+			    </xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SetTRACESUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+			    <xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="USERTYPE" type="UserType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="FORWARDTO" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="BARRING" type="ServiceStatusType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="SMSBARRING" type="ServiceStatusType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="TS21" type="ProvisionType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="TS22" type="ProvisionType" minOccurs="1" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SetCONTROLSUB">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+			    <xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+			    <xs:element name="DATA" type="BarringStatusType" minOccurs="0" maxOccurs="1"/>
+			    <xs:element name="B3G" type="BarringStatusType" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeleteMOVILAUCSUB" type="OnlyIMSI"/>
+	
+	<xs:element name="DeleteMOVILHLRSUB" type="IMSIAndMSISDN"/>
+	
+	<xs:element name="DeleteMOVILPOSSUB">
+	<xs:complexType>
+		<xs:all>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="AIRHLR" type="AIRHLRType" minOccurs="0"
+				maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeleteVOICEMAIL" type="OnlyMSISDN"/>
+	
+	<xs:complexType name="OnlyIMSI">
+		<xs:sequence>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="OnlyMSISDN">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="IMSIAndMSISDN">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0" maxOccurs="1"/>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="ValueMaps">
+		<xs:sequence>
+			<xs:element name="value" type="ValueMap" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ValueMapsOperation">
+		<xs:sequence>
+			<xs:element name="value" type="ValueMap" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="operation" type="string" />
+	</xs:complexType>
+	
+	<xs:complexType name="ValueMap">
+		<xs:simpleContent>
+			<xs:extension base="string">
+				<xs:attribute name="id" type="string" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="string">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="int">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="MoneyType">
+		<xs:restriction base="xs:decimal"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="int">
+			<xs:pattern value="\d{8,10}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IMSIType">
+		<xs:restriction base="int">
+			<xs:pattern value="\d{15}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="KIType">
+		<xs:restriction base="string">
+			<xs:length value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="A38Type">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="A4Type">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ADKeyType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="511"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AIRDateType">
+		<xs:restriction base="int">
+			<xs:pattern value="\d{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SIMNumberType">
+		<xs:restriction base="int">
+			<xs:pattern value="\d{12}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="PUKNumberType">
+		<xs:restriction base="int">
+			<xs:pattern value="\d{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AkaType">
+		<xs:restriction base="string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="BarringStatusType">
+		<xs:restriction base="string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ProvisionType">
+		<xs:restriction base="string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="VoucherStatusType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AIRHLRType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CurrencyType">
+		<xs:restriction base="string">
+			<xs:enumeration value="CUC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="PaymentProfileType">
+		<xs:restriction base="int">
+			<xs:enumeration value="1000"/>
+			<xs:enumeration value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ServiceStatusType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="NetworkType">
+		<xs:restriction base="string">
+			<xs:enumeration value="GSM"/>
+			<xs:enumeration value="TDMA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="LanguageType">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="string">
+			<xs:enumeration value="Block"/>
+			<xs:enumeration value="Unblock"/>
+			<xs:enumeration value="BlockRefill"/>
+			<xs:enumeration value="UnblockRefill"/>
+			<xs:enumeration value="Activate"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AdjustmentActionType">
+		<xs:restriction base="string">
+			<xs:enumeration value="ADJUST"/>
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="SUBTRACT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ReasonType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OBIType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OBOType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OBRType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SODCFType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ICKType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="127"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ARDType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="UserType">
+		<xs:restriction base="int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CategoryType">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="int">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="13"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="int">
+					<xs:enumeration value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="int">
+					<xs:minInclusive value="224"/>
+					<xs:maxInclusive value="254"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	
+</xs:schema>
