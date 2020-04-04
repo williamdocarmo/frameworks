@@ -14,7 +14,7 @@ public class SchemaValidator {
 
 	public static void main(String[] args) throws SAXException, IOException {
 		String[] files = new String[] {"correct-request.xml", "incorrect-request.xml"};
-		Validator validator = validator(new String[] {"MobileService.xsd"});
+		Validator validator = getValidator(new String[] {"MobileService.xsd"});
 		for (String file : files) {
 			try {
 				validator.validate(new StreamSource(new File(file)));
@@ -25,7 +25,7 @@ public class SchemaValidator {
 		}
 	}
 
-	public static Validator validator(String[] xsdPaths) throws SAXException {
+	public static Validator getValidator(String[] xsdPaths) throws SAXException {
 		SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		Source[] sources = new Source[xsdPaths.length];
 		for (int i = 0; i < xsdPaths.length; i++) {
