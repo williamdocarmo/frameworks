@@ -16,6 +16,7 @@ public class JAXBApplication {
 		marshall();
 		
 		unmarshall();
+		
 	}
 	
 	private static void marshall() throws JAXBException {
