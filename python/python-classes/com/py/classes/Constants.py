@@ -1,0 +1,2 @@
+LANGUAGE_NAME = "Python"
+VERSION = "3.8.5"
