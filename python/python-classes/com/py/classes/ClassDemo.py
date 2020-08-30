@@ -4,7 +4,7 @@ from com.py.classes import Calculator, Constants
 
 # Demonstration of POJO
 pc1 = Computer("AMD Ryzen 5", "AMD Radeon", "Corsair 16 GB DDR4", "Crucial MX 8")
-pc1.printComputerDetails()
+pc1.createComputer()
 
 # Data will be stored in Class level variable
 emp = Employee("Employee1", 90000)
@@ -20,5 +20,3 @@ print ("Division :",Calculator.divide(10, 5))
 
 # Reading Value from Constant Classes
 print(Constants.LANGUAGE_NAME, Constants.VERSION)
-
-print("Concatenation: ", Calculator.sum("Hello ", "Python"))

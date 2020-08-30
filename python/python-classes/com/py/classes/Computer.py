@@ -6,8 +6,8 @@ class Computer:
         self.ram = ram
         self.ssd = ssd
     
-    def printComputerDetails(self):
-        print("----Computer Components----")
+    def createComputer(self):
+        print("----Creating Computer with below Configuration----")
         print("CPU:", self.cpu)
         print("GPU:", self.gpu)
         print("RAM:", self.ram)
