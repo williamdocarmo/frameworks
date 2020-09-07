@@ -32,9 +32,9 @@ string2 = "Java"
 if not string1==string2:
     print("The strings are different")
 
-string = "python, java, scala, perl, golang, groovy, javascript"
-if ('python' in string or 'java' in string):
+languages = "python, java, scala, perl, golang, groovy, javascript"
+if ('python' in languages or 'java' in languages):
     print("This list contains powerful languages")
 
-if not ('html' in string and 'react' in string):
+if not ('html' in languages and 'react' in languages):
     print("This list does not contain UI languages")

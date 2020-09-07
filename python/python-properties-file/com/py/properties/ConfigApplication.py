@@ -1,3 +1,3 @@
-from com.py.properties import ConfigReader
-value = ConfigReader.getConfig("param1")
+from com.py.properties import ConfigReaderCustom
+value = ConfigReaderCustom.getConfig("param1")
 print(value)

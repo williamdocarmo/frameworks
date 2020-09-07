@@ -7,7 +7,8 @@ config.read('../../../example.ini')
 ''' Print Sections from Configuration '''
 print(config.sections())
 print(type(config.sections()))
-''' Check if Sessions Exist '''
+
+''' Check if Section Exist '''
 print('bitbucket.org' in config)
 print('bytebong.com' in config)
 
