@@ -1,0 +1,43 @@
+- Install Ubuntu VM
+
+- Install Open SSH Server
+	sudo apt-get install -y openssh-server
+	sudo systemctl enable ssh
+	sudo systemctl start ssh
+	
+- Install net-tools
+	sudo apt-get install -y net-tools
+	
+- Install Docker
+	#Remove Previous Installations:
+	sudo apt-get remove docker docker-engine docker.io containerd runc
+	#Get Docker:
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	#Install Docker:
+	sudo sh get-docker.sh
+	#Validate Installation:
+	docker --version
+
+- Install MicroK8s:
+	#Install MicroK8s
+	sudo snap install microk8s --classic
+	#Setup Users
+	sudo usermod -a -G microk8s $USER
+	sudo chown -f -R $USER ~/.kube
+	su - $USER
+	#Validate Installation:
+	microk8s status --wait-ready
+	microk8s kubectl get nodes
+	microk8s kubectl get services
+	#Create Kubectl Alias:
+	alias kubectl='microk8s kubectl'
+	#Install Addons:
+	microk8s status
+	microk8s enable <addon...>
+	#Start and Stop MicroK8s
+	microk8s stop | start
+	#Access Dashboard
+	token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+	microk8s kubectl -n kube-system describe secret $token
+	eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ5RUpMeFBvUHQxcW41c1VMZWFVQ3N4aF9qaW1xYkVIQUlMRHFJOUNkN28ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLTVtNGd2Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NWNkMWRhNy1kMTZiLTRmOGMtYWM1MS1mYjM3NGNkNmI2ZDciLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZGVmYXVsdCJ9.dqaCZvxbncpkBiuowpc02ZtGxSukRv-QnehSg7sg-qm9gwuHabjxXFxg5gp6BC3BYKqhkbXOQrVAPGMCl7XIYf5y7sVr5SBmrZ_pzbh2CT4sCMVeEacdXOxKgXkAjuWfYugtZWUScAWxZpNbUDZOeEE2SL1xGfDFPbMvE05CA1x37fXP8DV3Ie7EOJshMDp4D_qDKP2QXzWboBTUBklrzoP9tsQIjf0pjpLrFe5bLXMgfAJ-RlfmZ39KCDgQZyiV1KmpdVm9cOIWhwUvP-ErbXyjLM9mMPHfhMYFErKHqAbtwB_tiD8EfrqdHrzDtwuBploXPH6yX5tCbw-mvuQm_A
+	microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443

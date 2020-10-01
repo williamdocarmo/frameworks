@@ -1,0 +1,104 @@
+192.168.182.128
+santanu/5056
+Link: https://www.youtube.com/watch?v=fqMOX6JJhGo (watched till 00:58:00)
+
+install docker:
+	uninstall previous versions:
+	sudo apt-get remove docker docker-engine docker.io containerd runc
+	
+	install docker:
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
+	docker --version
+
+run container:
+	run directly:
+	- attached mode:
+	docker run docker/whalesay cowsay "Hello From Docker!"
+	- detached mode:
+	docker run -d docker/whalesay cowsay "Hello From Docker!"
+	- interactive mode:
+	docker run -d docker/whalesay cowsay "Hello From Docker!"
+	- port forward (container port 5000 mapped to host port 1001):
+	docker run -p 1001:5000 kodekloud/webapp
+	- data mount (volume mapping):
+	docker run -v /opt/datadir:/var/lib/mysql mysql
+	
+	attach later:
+	docker attach <container_id>
+	
+	create container and start:
+	docker container create -it docker/whalesay cowsay "Hello From Docker!"
+	docker container start <container_id>
+
+list containers:
+	all containers: [both will work]
+	docker container ls
+	docker ps
+	
+	only running containers: [both will work]
+	docker container ls -a
+	docker ps -a
+
+docker shell:
+	enter:
+	docker container exec -it <container_id> sh
+	exit: control + p + q
+
+docker container logs:
+	docker logs <container_id>
+	
+environment variable:
+docker run -e paramname=value image_name
+
+stop docker:
+docker container stop <container_id>
+
+remove docker command:
+docker container rm -f <container_id>
+
+docker configuration:
+/var/lib/docker/containers/<container_id>/config.v2.json
+
+create images:
+use Dockerfile
+https://docs.docker.com/engine/reference/builder/
+	FROM
+	RUN
+	ENV
+	WORKDIR
+	ADD
+	COPY
+	CMD
+	ENTRYPOINT
+	EXPOSE
+	LABEL
+	STOPSIGNAL
+	USER
+	VOLUME
+	ONBUILD
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+docker build Dockerfile -t my_app
+
+override ENTRYPOINT:
+docker run --entrypoint newcommand myapp 10 [newcommand is the new entry point command, 10 is the argument]
+
+push image in public registry:
+docker push username/my_app
+
+layers in images:
+docker history image_name
+
+list images:
+docker image ls
+
+remove a image:
+docker rmi <image_id>
+
+docker build . -t webserver
+docker run -p 1001:9999 -v /devzone/docker-practice/dockermount1:/webserver/tmp webserver
+docker container exec -it 61374bb9c4de sh
+
+
+https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s#1-overview
+https://microk8s.io/docs

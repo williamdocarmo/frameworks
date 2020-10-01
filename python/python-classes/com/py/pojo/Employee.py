@@ -4,4 +4,4 @@ class Employee:
         Employee.employee[empname] = empsalary
    
     def printEmployee(self):
-        print("Type of Employee is: ", Employee.employee)
+        print("Employee Data: ", Employee.employee)
