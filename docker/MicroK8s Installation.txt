@@ -21,21 +21,27 @@
 - Install MicroK8s:
 	#Install MicroK8s
 	sudo snap install microk8s --classic
+	
 	#Setup Users
 	sudo usermod -a -G microk8s $USER
 	sudo chown -f -R $USER ~/.kube
 	su - $USER
+	
 	#Validate Installation:
 	microk8s status --wait-ready
 	microk8s kubectl get nodes
 	microk8s kubectl get services
+	
 	#Create Kubectl Alias:
 	alias kubectl='microk8s kubectl'
+	
 	#Install Addons:
 	microk8s status
 	microk8s enable <addon...>
+	
 	#Start and Stop MicroK8s
 	microk8s stop | start
+	
 	#Access Dashboard
 	token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
 	microk8s kubectl -n kube-system describe secret $token

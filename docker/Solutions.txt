@@ -1,0 +1,314 @@
+----------------------------------------------------------------------------------------------------------------
+Q1
+1. Create the pod:
+	kubectl run cache --image=lfccncf/redis:4.0-alpine -n web
+2. Expose the service:
+	kubectl expose pod/cache --port=6379 -n web
+
+----------------------------------------------------------------------------------------------------------------
+Q2
+1. Create the secret:
+	kubectl create secret generic another-secret --from-literal=key1=value4
+2. Create the pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-secret
+spec:
+  containers:
+  - image: nginx
+    name: nginx-secret
+    env:
+     - name: BEST_VARIABLE
+       valueFrom:
+         secretKeyRef:
+           name: another-secret
+           key: key1
+----------------------------------------------------------------------------------------------------------------
+Q3
+1. Create the pod:
+	kubectl run nginx-resources --image=nginx --requests='cpu=400m,memory=2Gi' --dry-run=client -o yaml >pod.yaml
+
+or
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-resources
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources:
+      requests:
+        memory: "2Gi"
+        cpu: "400m"
+----------------------------------------------------------------------------------------------------------------
+Q4
+1. Create the config map:
+	kubectl create cm some-config --from-literal=key4=value1
+2. Create the pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-configmap
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: foo
+      mountPath: "/some/path"
+      readOnly: true
+  volumes:
+  - name: foo
+    configMap:
+      name: some-config
+----------------------------------------------------------------------------------------------------------------
+Q5
+1. Edit the deployment with below command:
+	kubectl edit deployment/app-1 -n frontend
+2. Update the YAML to the following:
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app-1
+  namespace: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+      serviceAccountName: app-account-1  
+----------------------------------------------------------------------------------------------------------------
+Q6
+1. Create the Pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-http
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/liveness
+    args:
+    - /server
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+    readinessProbe:
+      httpGet:
+        path: /started
+        port: 8080
+----------------------------------------------------------------------------------------------------------------
+Q7
+1. Deploy the Pod:
+	kubectl create –f /opt/KDOB00201/counter.yaml
+2. Capture and store the logs:
+	kubectl logs <pod_name>   > /opt/KDOB00201/log_output.txt
+----------------------------------------------------------------------------------------------------------------
+Q8
+1. Use AWK to capture the Pod name:
+	echo kubectl top pod -n stress  --no-headers –sort-by=cpu| head -1 |awk ‘{print $2}’
+	echo <output> > /opt/KDOB00301/pod.txt
+----------------------------------------------------------------------------------------------------------------
+Q9
+1. Create the POD:
+	kubectl –f apply /opt/KDPD00101/pod1.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app1
+  labels:
+    purpose: demonstrate-command
+spec:
+  containers:
+  - name: app1cont
+    image: ifccnf/arg-output
+    
+    args: ["--line", "56", “-F”]
+  restartPolicy: OnFailure
+
+2. Capture Pod details in JSON:
+	kubectl get pod app1 -o json > /opt/KDPD00101/out1.json
+----------------------------------------------------------------------------------------------------------------
+Q10
+1. Create deployment using given image:
+	kubectl create deployment frontend --image=lfccncf/nginx:1.13.7 --replicas=6 -n kdpd00201
+2. Set Environment variable:
+	kubectl set env deployment frontend NGINX_PORT=8001 -n kdpd00201
+3. Expose port:
+	kubectl expose deployment frontend --port=8001 -n kdpd00201
+----------------------------------------------------------------------------------------------------------------
+Q11
+1. Edit the deployment:
+	kubectl edit deployment/web1 -n kdpd00202  
+2. Update maxSurge and maxUnavailable:
+...
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 6
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: app-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 10%
+      maxUnavailable: 5%
+...
+3. Rollout deployment:
+	kubectl set image deployment/web1 nginx=1.3.8-alpine -n kdpd00202
+4. Undo deployment:
+	kubectl rollout undo deployment/web1 -n kdpd00202
+----------------------------------------------------------------------------------------------------------------
+Q12
+1. Set label:
+	kubectl label deployment/kdsn00101-deployment func=dmz --overwrite -n kdsn00101
+2. Set replica:
+	kubectl scale --replicas=4 deployment/kdsn00101-deployment -n kdsn00101 ; 
+3. Create service and expose port:
+	kubectl expose deployment/kdsn00101-deployment --name=cherry --port=81 --type=NodePort -n kdsn00101
+----------------------------------------------------------------------------------------------------------------
+Q13
+
+kubectl edit svc nginxsvc
+
+kubectl create configmap haproxy-config --from-file=/opt/KDMC00101/haproxy.cfg
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: haproxy
+spec:
+  volumes:
+  - name: test
+    configMap:
+       name: haproxy-config
+  containers:  
+  - image: nginx
+    name: poller
+    resources: {}
+  - image: nginx
+    name: haproxy
+    resources: {}
+    ports:
+    - containerPort: 81
+      protocol: TCP
+    volumeMounts:
+    - name: test
+      mountPath: /usr/local/etc/haproxy
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}  
+
+k exec haproxy -c haproxy -- ls /usr/local/etc/haproxy -> will show
+----------------------------------------------------------------------------------------------------------------
+Q14
+k create cj hello --image=busybox --schedule="*/1 * * * *" --dry-run=client -o yaml -- sh -c 'date' > cj.yaml
+update: "activeDeadlineSeconds: 17" under jobtemplate/spec
+----------------------------------------------------------------------------------------------------------------
+Q15
+1. Edit the deployment and update image name
+	kubectl edit deployment <deployment name>
+----------------------------------------------------------------------------------------------------------------
+Q16
+
+k label pod kdsn00201-newpod role=web
+k label pod web role=access-web 
+
+k label pod kdsn00201-newpod role=storage
+k label pod storage role=access-storage
+
+----------------------------------------------------------------------------------------------------------------
+Q17
+
+kubectl get pod -A --field-selector status.phase!=Running -o=jsonpath='{range .items[*]}{.metadata.namespace}/{.metadata.name}{"\n"}' > /opt/KDOB00401/broken.txt
+
+kubectl get events -A -o wide | grep  error > /opt/KDOB00401/error.txt
+
+Edit the pod - probe port to be set to 8080
+# to fix the issue we need to check error details
+
+----------------------------------------------------------------------------------------------------------------
+Q18
+1. Go to specified node:
+	ssh sk8-node-0
+	
+2. Write content to the specified file:
+	echo Acct=Finance > /opt/KDSP00101/data/index.html
+	
+3. Come back to master node:
+	exit
+	
+4. Create Persistence Volume YAML
+vi pv.yaml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:[‘ReadWriteOnce’]
+  storageClassName: exam
+  hostPath:
+    path: /opt/KDSP00101/data
+
+5. Create Persistence Volume Claim YAML
+vi pvc.yaml
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+  storageClassName: exam
+6. Create Pod YAML:
+vi pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+  labels:
+     app: my-storage-app
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+      - mountPath: "/usr/share/nginx/html"
+        name: task-pv-claim
+  volumes:
+    - name: task-pv-claim
+      persistentVolumeClaim:
+        claimName: task-pv-claim
+
+----------------------------------------------------------------------------------------------------------------
+Q19
+***
+----------------------------------------------------------------------------------------------------------------

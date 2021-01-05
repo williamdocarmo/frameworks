@@ -2,8 +2,7 @@
 FROM ubuntu
 RUN echo 'Image based out of Ubuntu'
 
-ENV envparam1 envvalue1
-ENV envparam2 envvalue2
+
 
 # Install Java
 RUN echo 'Going to install Java now'
@@ -17,6 +16,9 @@ RUN mkdir /webserver
 RUN mkdir /webserver/tmp
 COPY WebServer.jar /webserver
 RUN echo 'Web server has been set up'
+
+# Set Environment Variable
+ENV app_port 9999
 
 # Run Server
 RUN echo 'Going to run the web server'
