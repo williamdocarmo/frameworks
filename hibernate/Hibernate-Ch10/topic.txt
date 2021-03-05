@@ -1,0 +1,3 @@
+HQL
+Named Query
+Native Query

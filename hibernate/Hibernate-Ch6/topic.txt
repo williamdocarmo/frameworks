@@ -1,0 +1,1 @@
+Inheritance - Single Table Strategy

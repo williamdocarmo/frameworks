@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0 //EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="circle" class="com.spring.Circle">
+		<property name="center" ref="center" />
+	</bean>
+
+	<bean id="triangle" class="com.spring.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="pointA" class="com.spring.Point">
+		<property name="x" value="1" />
+		<property name="y" value="1" />
+	</bean>
+	
+	<bean id="pointB" class="com.spring.Point">
+		<property name="x" value="2" />
+		<property name="y" value="2" />
+	</bean>
+	
+	<bean id="pointC" class="com.spring.Point">
+		<property name="x" value="3" />
+		<property name="y" value="3" />
+	</bean>
+	
+	<bean id="center" class="com.spring.Point">
+		<property name="x" value="5" />
+		<property name="y" value="5" />
+	</bean>
+
+</beans>

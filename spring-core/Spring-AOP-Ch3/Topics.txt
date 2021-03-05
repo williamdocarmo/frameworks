@@ -1,0 +1,3 @@
+Advice- Before, After, Around, AfterThrowing, AfterReturning
+Wildcard
+Pointcut

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0 //EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans default-init-method="init" default-destroy-method="destroy">
+	<!-- Setter Injection -->
+	<bean id="triangle" class="com.spring.Triangle" init-method="init" destroy-method="destroy">
+
+		<!-- Primitive/String -->
+		<property name="type" value="Equilateral" />
+
+		<!-- List -->
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint" />
+				<bean class="com.spring.Point">
+					<property name="x" value="0" />
+					<property name="y" value="10" />
+				</bean>
+				<bean class="com.spring.Point">
+					<property name="x" value="10" />
+					<property name="y" value="0" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- Map -->
+		<property name="metadata">
+			<map>
+				<entry key="param1" value="value1" />
+				<entry key="param2" value="value2" />
+			</map>
+		</property>
+
+		<!-- Bean Reference -->
+		<property name="pointA" ref="zeroPoint" />
+
+		<!-- Inner Bean -->
+		<property name="pointB">
+			<bean class="com.spring.Point">
+				<property name="x" value="0" />
+				<property name="y" value="10" />
+			</bean>
+		</property>
+		<property name="pointC">
+			<bean class="com.spring.Point">
+				<property name="x" value="10" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Constructor Injection : Index Based -->
+	<bean id="circle1" class="com.spring.Circle">
+		<constructor-arg index="0" value="10" />
+		<constructor-arg index="1" value="Full Circle" />
+	</bean>
+
+	<!-- Constructor Injection : Type Based -->
+	<bean id="circle2" class="com.spring.Circle">
+		<constructor-arg type="int" value="20" />
+		<constructor-arg type="java.lang.String" value="Half Circle" />
+	</bean>
+
+	<bean id="zeroPoint" class="com.spring.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
+	<!-- Alias -->
+	<alias name="triangle" alias="triangle-alias" />
+
+	<alias name="triangle" alias="t" />
+	
+</beans>
