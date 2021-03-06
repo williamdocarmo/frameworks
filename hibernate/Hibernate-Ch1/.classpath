@@ -7,6 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HibernateLib"/>
-	<classpathentry kind="lib" path="C:/workspaces/Repositories/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/Repositories/mysql-connector-java-8.0.23.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

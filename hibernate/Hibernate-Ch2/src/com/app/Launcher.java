@@ -6,13 +6,13 @@ public class Launcher {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		// insertSimpleKey();
+		// application.insertSimpleKey();
 		
-		// insertUuidKey(); 
+		// application.insertUuidKey(); 
 		
-		// insertTableBasedKey();
+		// application.insertTableBasedKey();
 		
-		// insertSequenceBasedKey();
+		application.insertSequenceBasedKey();
 		
 		// application.insertCustomKey();
 		
@@ -24,7 +24,7 @@ public class Launcher {
 		
 		// application.insertDataWithListObject();
 		
-		application.getDataWithListObject();
+		// application.getDataWithListObject();
 		
 		// application.insertDataWithMapObject();
 		

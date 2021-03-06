@@ -7,7 +7,7 @@ public class Launcher {
 	public static void main(String[] args) throws InterruptedException {
 
 		// save, saveOrUpdate, persist
-		// application.insert(); 
+		application.insert(); 
 		
 		// get, load, find
 		// application.select();

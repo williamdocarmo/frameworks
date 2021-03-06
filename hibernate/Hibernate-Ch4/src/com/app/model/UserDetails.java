@@ -26,9 +26,9 @@ public class UserDetails {
 	@Column(name = "USER_NAME")
 	private String username;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "userDetails") // Will not create separate column
+	@OneToMany(cascade = CascadeType.ALL) // Will not create separate column
 	// will create separate join table
-	// @JoinTable(name = "USER_ACCOUNT", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ACCOUNT_ID"))
+	@JoinTable(name = "USER_ACCOUNT", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "ACCOUNT_ID"))
 	private List<Account> accounts;
 
 	public UserDetails(String username) {

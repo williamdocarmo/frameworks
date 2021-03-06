@@ -21,14 +21,10 @@ public class UserDetails {
 		super();
 	}
 	
-	
-
 	public UserDetails(String username) {
 		super();
 		this.username = username;
 	}
-
-
 
 	public int getId() {
 		return id;

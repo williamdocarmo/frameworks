@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("TwoWheelerVehicle")
-@DiscriminatorColumn(name = "BikeType")
 public class Bike extends Vehicle {
 	
 	private String steeringHandle;

@@ -18,12 +18,12 @@ public class CustomIDGenerator implements IdentifierGenerator {
 		Session session = HibernateUtil.getSession();
 		session.beginTransaction();
 		NativeQuery query = session.createNativeQuery(idSuffixSql);
-		List<?> result = query.list();
+		String result = (String) query.uniqueResult();
 		String updateSeqSql = "UPDATE USER_SEQUENCE SET ID=LAST_INSERT_ID(ID+1)";
 		query = session.createNativeQuery(updateSeqSql);
 		query.executeUpdate();
 		session.getTransaction().commit();
-		return "User"+result.get(0);
+		return "User"+result;
 	}
 
 }
