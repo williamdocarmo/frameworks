@@ -1,6 +1,9 @@
 package com.app.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -31,6 +34,7 @@ public class AuthenticationController extends HttpServlet {
 				session.setAttribute("userinfo", user);
 				request.setAttribute("userinfo", user);
 				request.setAttribute("greetingMessage", user.getUserName()+" says hello!");
+				request.setAttribute("associatedUsers", getUsers());
 				Cookie cookie = new Cookie("username", username+"fromookie");
 				response.addCookie(cookie);
 			}
@@ -39,7 +43,13 @@ public class AuthenticationController extends HttpServlet {
 		} else {
 			response.sendRedirect("Login.jsp");
 		}
-		
+	}
+	
+	private List<UserModel> getUsers(){
+		return Arrays.asList(new UserModel("1", "name 1", "city 1", "state 1", "pin 1"),
+				new UserModel("2", "name 2", "city 2", "state 2", "pin 4"),
+				new UserModel("3", "name 3", "city 3", "state 3", "pin 3"),
+				new UserModel("4", "name 4", "city 4", "state 4", "pin 4"));
 	}
 
 }
