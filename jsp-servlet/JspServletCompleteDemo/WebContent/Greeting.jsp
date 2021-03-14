@@ -117,6 +117,8 @@ pageContext.setAttribute("application_username", request.getParameter("username"
 	<br />Redirecting Servlet<form action="RedirectingServlet" method="Get"><input type="submit"></form>
 	<br />Initialized JSP Param<form action="InitJSP" method="Get"><input type="submit"></form>
 	<br />User Registration Form<form action="userRegistrationForm.jsp" method="Get"><input type="submit"></form>
+	<br />File Download<form action="Download" method="Get"><input type="submit"></form>
+	<br />File Upload<form action="uploader.jsp" method="Get"><input type="submit"></form>
 	<br />
 	
 <form action="Logout.jsp">

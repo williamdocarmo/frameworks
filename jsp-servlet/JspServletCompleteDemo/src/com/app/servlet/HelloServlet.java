@@ -26,7 +26,7 @@ public class HelloServlet extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		System.out.println("Inside HelloServlet.Init(ServletConfig)....");
+		System.out.println("Initializing Servlet: "+config.getServletName());
 		Enumeration<String> configs = config.getInitParameterNames();
 		while (configs.hasMoreElements()) {
 			String cel = configs.nextElement();
