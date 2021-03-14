@@ -70,7 +70,9 @@ public class HelloServlet extends HttpServlet {
 		writer.println("<h3>doGet Served at: " + request.getContextPath() + "</h3>");
 		
 		writer.println("<h4>Request Username Stored in Session from Hello JSP: " + request.getSession().getAttribute("session_username") + "</h4>");
-		writer.println("<h4>Request Username Stored in Application from Hello JSP: " + getServletContext().getAttribute("application_username") + "</h4></html>");
+		writer.println("<h4>Request Username Stored in Application from Hello JSP: " + getServletContext().getAttribute("application_username") + "</h4>");
+		
+		writer.println("<h4>Session Param set in Greeting.jsp using JSTL: " + request.getSession().getAttribute("jstlParam") + "</h4></html>");
 
 	}
 

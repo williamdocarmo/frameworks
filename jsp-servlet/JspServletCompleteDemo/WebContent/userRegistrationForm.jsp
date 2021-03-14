@@ -7,6 +7,7 @@
 <title>User Registration Page</title>
 </head>
 <body>
+
 <form action="userRegistrationProcess.jsp" method="post">
 		<br /> User ID: <input type="text" name="userId" />
 		<br /> User Name: <input type="text" name="userName" />
@@ -16,4 +17,6 @@
 		<br /> <input type="submit" />
 	</form>
 </body>
+
+
 </html>

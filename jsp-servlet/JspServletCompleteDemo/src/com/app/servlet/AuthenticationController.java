@@ -31,7 +31,7 @@ public class AuthenticationController extends HttpServlet {
 				session.setAttribute("userinfo", user);
 				request.setAttribute("userinfo", user);
 				request.setAttribute("greetingMessage", user.getUserName()+" says hello!");
-				Cookie cookie = new Cookie("username", username);
+				Cookie cookie = new Cookie("username", username+"fromookie");
 				response.addCookie(cookie);
 			}
 			// response.sendRedirect("Greeting.jsp");

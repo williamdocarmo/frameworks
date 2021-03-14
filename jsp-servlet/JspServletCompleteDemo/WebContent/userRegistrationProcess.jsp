@@ -16,7 +16,7 @@
 <jsp:setProperty property="pincode" name="user" param="pinCode"/>
 </jsp:useBean>
 
-<h3>Hello, <jsp:getProperty  property="pincode" name="user"/></h3>
+<h3>Hello, <jsp:getProperty property="userName" name="user"/></h3>
 
 </body>
 </html>
