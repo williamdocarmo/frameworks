@@ -1,6 +1,0 @@
-PACKET DATA PROTOCOL CONTEXT DATA
-APNID   PDPADD                EQOSID  VPAA  PDPCH    PDPTY  PDPID
-    6                          401    NO             IPV4    1
-    9                          401    NO             IPV4    2
-
-END
