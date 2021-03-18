@@ -2,6 +2,9 @@ package com.app.framework;
 
 import org.springframework.context.support.AbstractApplicationContext;
 
+import com.app.dao.JdbcDaoImpl;
+import com.app.dao.SubscriberDAO;
+
 public class ContextHolder {
 
 	private ContextHolder() {
@@ -24,6 +27,10 @@ public class ContextHolder {
 
 	public JdbcDaoImpl getDAO() {
 		return this.context.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
+	}
+	
+	public SubscriberDAO subscriberDao() {
+		return this.context.getBean("subscriberDAO", SubscriberDAO.class);
 	}
 
 }

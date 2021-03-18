@@ -1,22 +1,47 @@
 package com.app.ws.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.app.bsl.SubscriberLogic;
+import com.app.dao.JdbcDaoImpl;
 import com.app.framework.ContextHolder;
-import com.app.framework.JdbcDaoImpl;
+import com.app.vo.AuthenticationData;
+import com.app.vo.ResponseData;
+import com.app.vo.Subscriber;
 import com.app.ws.SubscriberService;
 
 import jakarta.jws.WebService;
+import jakarta.jws.soap.SOAPBinding;
 
 @WebService(endpointInterface = "com.app.ws.SubscriberService")
 public class SubscriberServiceImpl implements SubscriberService {
 	
-	private JdbcDaoImpl getDAO() {
-		return ContextHolder.getContextHolder().getDAO();
+	SubscriberLogic logic = new SubscriberLogic();
+	
+	public int createSubscriber(Subscriber subscriber) {
+		return logic.createSubscriber(subscriber);
 	}
-
-	@Override
-	public String createSubscriber(String id, String name) {
-		getDAO().createSubscriber(id, name);
-		return null;
+	
+	public Subscriber getSubscriber(String msisdn) {
+		return logic.getSubscriber(msisdn);
+	}
+	
+	public Subscriber getSubscriberImsi(String imsi) {
+		return logic.getSubscriberImsi(imsi);
+	}
+	
+	public List<Subscriber> getAllSubscribers() {
+		return logic.getAllSubscribers();
+	}
+	
+	public int updateSubscriber(String msisdn, String voice2G, String volte, String sms, String mms, String dataGprs, String dataLte) {
+		return logic.updateSubscriber(msisdn, voice2G, volte, sms, mms, dataGprs, dataLte);
+	}
+	
+	public int deleteSubscriber(AuthenticationData authData, String msisdn) {
+		System.out.println("Authentication Info: "+authData);
+		return logic.deleteSubscriber(msisdn);
 	}
 
 }
