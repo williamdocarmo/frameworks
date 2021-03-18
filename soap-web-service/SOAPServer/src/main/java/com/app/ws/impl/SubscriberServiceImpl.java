@@ -1,18 +1,13 @@
 package com.app.ws.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.app.bsl.SubscriberLogic;
-import com.app.dao.JdbcDaoImpl;
-import com.app.framework.ContextHolder;
 import com.app.vo.AuthenticationData;
-import com.app.vo.ResponseData;
 import com.app.vo.Subscriber;
 import com.app.ws.SubscriberService;
 
 import jakarta.jws.WebService;
-import jakarta.jws.soap.SOAPBinding;
 
 @WebService(endpointInterface = "com.app.ws.SubscriberService")
 public class SubscriberServiceImpl implements SubscriberService {

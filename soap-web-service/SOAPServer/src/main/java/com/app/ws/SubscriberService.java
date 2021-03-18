@@ -5,6 +5,7 @@ import java.util.List;
 import com.app.vo.AuthenticationData;
 import com.app.vo.Subscriber;
 
+import jakarta.jws.Oneway;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebParam.Mode;
@@ -15,8 +16,8 @@ import jakarta.jws.soap.SOAPBinding.ParameterStyle;
 import jakarta.jws.soap.SOAPBinding.Style;
 import jakarta.jws.soap.SOAPBinding.Use;
 
-@WebService(name = "SubscriberMobileService", portName = "SubscriberPort", serviceName = "SubscriberMobileService", targetNamespace = "http://service.mobile.com")
-@SOAPBinding(style = Style.DOCUMENT, parameterStyle = ParameterStyle.WRAPPED, use = Use.ENCODED)
+@WebService(name = "SubscriberMobileServiceName", portName = "SubscriberPort", serviceName = "SubscriberMobileService", targetNamespace = "http://service.mobile.com")
+@SOAPBinding(style = Style.DOCUMENT, parameterStyle = ParameterStyle.WRAPPED, use = Use.LITERAL)
 public interface SubscriberService {
 	
 	@WebMethod(action = "create", exclude = false, operationName = "createMobileSubscriber")
@@ -31,10 +32,11 @@ public interface SubscriberService {
 	
 	@WebMethod(action = "update", exclude = false, operationName = "updateMobileSubscriber")
 	@WebResult(name = "affectedRows", header = false)
-	public int updateSubscriber(@WebParam(name = "MSISDN") String msisdn, @WebParam(name = "Voice2G") String voice2G, @WebParam(name = "VoLTE") String volte, @WebParam(name = "SMS") String sms, @WebParam(name = "MMS") String mms, @WebParam(name = "GPRS") String dataGprs, @WebParam(name = "LTE") String dataLte);
+	public int updateSubscriber(@WebParam(name = "MSISDN", partName = "mSiSdN") String msisdn, @WebParam(name = "Voice2G") String voice2G, @WebParam(name = "VoLTE") String volte, @WebParam(name = "SMS") String sms, @WebParam(name = "MMS") String mms, @WebParam(name = "GPRS") String dataGprs, @WebParam(name = "LTE") String dataLte);
 	
 	@WebMethod(action = "delete", exclude = false, operationName = "deleteMobileSubscriber")
 	@WebResult(name = "affectedRows", header = true)
+	@Oneway
 	public int deleteSubscriber(@WebParam(name = "authentication", header = true, mode = Mode.IN)AuthenticationData authData, @WebParam(name = "msisdn", header = false, mode = Mode.IN)String msisdn);
 	
 	@WebMethod(action = "get", exclude = true, operationName = "getAllMobileSubscribers")
