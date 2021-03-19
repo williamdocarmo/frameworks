@@ -232,11 +232,10 @@ Q15
 Q16
 
 k label pod kdsn00201-newpod role=web
-k label pod web role=access-web 
 
 k label pod kdsn00201-newpod role=storage
-k label pod storage role=access-storage
 
+kdsn00201-newpod label = pod selector label in network policy
 ----------------------------------------------------------------------------------------------------------------
 Q17
 
@@ -310,5 +309,52 @@ spec:
 
 ----------------------------------------------------------------------------------------------------------------
 Q19
-***
+
+#kubectl create –f /opt/KDMC00102/fluented-configmap.yaml	
+# Create a deployment file like below
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-web
+  name: deployment-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-web
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-web
+    spec:
+      volumes:
+      - name: vol1
+        emptyDir: {}
+      - name: vol2
+        configMap:
+            name: fluentd-config
+      containers:
+      - image: lfccncf/busybox:1
+        name: logger-dev
+        command: ["/bin/sh"]
+        args: [ "-c", "while true; do echo i luv cncf >> /tmp/log/input.log; sleep 10; done"]
+        resources: {}
+        volumeMounts:
+        - name: vol1
+          mountPath: /tmp/log
+      - image: ifccnf/fluentd:v0.12
+        name: adaptor-123
+        command: ["/bin/sh"]
+        args: [ "-c", "tail -f /tmp/log/input.log >> /tmp/log/output.log"]
+
+        volumeMounts:
+        - name: vol1
+          mountPath: /tmp/log
+        - name: vol2
+          mountPath: /fluentd/etc
+status: {}
 ----------------------------------------------------------------------------------------------------------------
