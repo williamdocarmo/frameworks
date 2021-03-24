@@ -1,9 +1,0 @@
-com\app\ws\SubscriberService.class
-com\app\vo\ServiceData.class
-com\app\framework\Initializer.class
-com\app\vo\SubscriberInfo.class
-com\app\framework\ContextHolder.class
-com\app\vo\AuthenticationData.class
-com\app\vo\ResponseData.class
-com\app\ws\impl\SubscriberServiceImpl.class
-com\app\framework\JdbcDaoImpl.class

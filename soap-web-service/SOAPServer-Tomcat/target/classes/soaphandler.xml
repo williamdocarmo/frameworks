@@ -1,7 +1,0 @@
-<handler-chains>
-	<handler-chain>
-		<handler>
-			<handler-class>com.app.framework.ServiceHandler</handler-class>
-		</handler>
-	</handler-chain>
-</handler-chains>
