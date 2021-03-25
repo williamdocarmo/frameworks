@@ -13,18 +13,16 @@ import javax.xml.ws.Holder;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.soap.Addressing;
-import javax.xml.ws.soap.AddressingFeature;
-import javax.xml.ws.soap.AddressingFeature.Responses;
 
 import com.app.db.SubscriberDB;
 import com.app.exc.SubscriberNotFoundException;
+import com.app.util.SOAPUtils;
 import com.app.vo.AuthenticationData;
 import com.app.vo.Subscriber;
 import com.app.ws.SubscriberService;
 
 
 @WebService(name = "SubscriberMobileServiceName", portName = "SubscriberPort", serviceName = "SubscriberMobileService", endpointInterface = "com.app.ws.SubscriberService")
-@Addressing(enabled = true, required = false)
 public class SubscriberServiceImpl implements SubscriberService {
 	
 	@Resource
@@ -47,6 +45,7 @@ public class SubscriberServiceImpl implements SubscriberService {
 	}
 	
 	public Subscriber getSubscriber(String msisdn) {
+		SOAPUtils.printMessageContext(webServiceContext.getMessageContext());
 		return dao.getSubscriberByMSISDN(msisdn);
 	}
 	

@@ -1,0 +1,7 @@
+<S:Envelope	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:greetResponse xmlns:ns2="http://webservice.service.soap.com/">
+			<return>Hello, Santanu</return>
+		</ns2:greetResponse>
+	</S:Body>
+</S:Envelope>

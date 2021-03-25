@@ -1,0 +1,20 @@
+Addressing Request Sample:
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gre="http://greet.app.com/" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+   <soapenv:Header>
+		<wsa:MessageID>M1</wsa:MessageID>
+		<wsa:ReplyTo>
+			<wsa:Address>http://localhost:29999/replyTo</wsa:Address>
+		</wsa:ReplyTo>
+		<wsa:FaultTo>
+			<wsa:Address>http://localhost:19999/faultTo</wsa:Address>
+		</wsa:FaultTo>
+		<wsa:To>http://localhost:19999/To</wsa:To>
+		<wsa:Action>http://greet.app.com/greetUser</wsa:Action>
+	</soapenv:Header>
+   <soapenv:Body>
+      <gre:greetUser>
+         <User></User>
+      </gre:greetUser>
+   </soapenv:Body>
+</soapenv:Envelope>
