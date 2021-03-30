@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "SubscriberInformation")
-@XmlType(propOrder = {"msisdn", "imsi", "voice2G", "volte", "sms"}, name = "SubscriberInformation")
+@XmlType(propOrder = {"msisdn", "imsi", "voice2G", "volte", "sms"})
 public class Subscriber {
 
 	@XmlAttribute(name = "MSISDN")

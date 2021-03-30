@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/gmbal-api-only.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/ha-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.activation.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.annotation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.xml.soap-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/management-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/mimepull.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/policy.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/saaj-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/stax2-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/streambuffer.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/txw2.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/webservices-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/woodstox-core.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.8.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

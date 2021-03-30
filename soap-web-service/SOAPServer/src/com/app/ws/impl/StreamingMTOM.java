@@ -4,6 +4,7 @@ import java.io.File;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlMimeType;
@@ -19,6 +20,7 @@ import com.sun.xml.ws.developer.StreamingDataHandler;
 @WebService(name = "MOTMStream", portName = "MTOMPort", serviceName = "MtomStreamingService", targetNamespace = "http://example.org")
 @BindingType(SOAPBinding.SOAP11HTTP_MTOM_BINDING)
 @StreamingAttachment(parseEagerly = true, memoryThreshold = 40000L)
+@HandlerChain(file = "soaphandler.xml")
 public class StreamingMTOM {
 
 	@WebMethod

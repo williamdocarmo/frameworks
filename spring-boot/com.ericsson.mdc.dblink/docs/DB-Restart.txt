@@ -1,0 +1,28 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Program Files (x86)\PowerCmd>SQLPLUS / AS SYSDBA
+
+SQL*Plus: Release 11.2.0.2.0 Production on Fri Oct 21 17:53:05 2016
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> SHUTDOWN IMMEDIATE
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> STARTUP
+ORACLE instance started.
+
+Total System Global Area 1068937216 bytes
+Fixed Size		    2260048 bytes
+Variable Size		  666895280 bytes
+Database Buffers	  394264576 bytes
+Redo Buffers		    5517312 bytes
+Database mounted.
+Database opened.
+SQL> 

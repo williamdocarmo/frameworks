@@ -1,5 +1,6 @@
 package com.spring;
 
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,15 +18,15 @@ public class SpringConfiguration {
 		point.setY(10);
 		return point;
 	}
-	
-	@Bean
+
+	@Bean(name = { "anotherPoint", "point1" })
 	public Point anotherPoint() {
 		Point point = new Point();
 		point.setX(25);
 		point.setY(210);
 		return point;
 	}
-	
+
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();

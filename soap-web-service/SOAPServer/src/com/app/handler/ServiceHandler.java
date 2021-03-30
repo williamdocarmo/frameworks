@@ -40,37 +40,37 @@ public class ServiceHandler implements SOAPHandler<SOAPMessageContext> {
 		try {
 			// MessageConext Information
 			Set<String> keyset = ctx.keySet();
-			// System.out.println("Operation: " + ctx.get(SOAPMessageContext.WSDL_OPERATION));
+			System.out.println("Operation: " + ctx.get(SOAPMessageContext.WSDL_OPERATION));
 			boolean incoming = !(Boolean) ctx.get(SOAPMessageContext.MESSAGE_OUTBOUND_PROPERTY);
 			if (incoming)
 				for (String key : keyset) {
-					// System.out.println("Key: " + key + " ::: " + "Value: " + ctx.get(key));
+					System.out.println("Key: " + key + " ::: " + "Value: " + ctx.get(key));
 				}
 
 			// HTTP Headers
 			Map<String, List<String>> headers = (Map<String, List<String>>) ctx.get(SOAPMessageContext.HTTP_REQUEST_HEADERS);
 			if (null != headers && incoming) {
-				// System.out.println("----------HTTP Header Analysis----------");
+				System.out.println("----------HTTP Header Analysis----------");
 				List<String> username = headers.get("username");
 				List<String> secureToken = headers.get("secure_token");
-				// System.out.println("Username in HTTP Header: " + username);
-				// System.out.println("Secure Code in HTTP Header: " + secureToken);
+				System.out.println("Username in HTTP Header: " + username);
+				System.out.println("Secure Code in HTTP Header: " + secureToken);
 			}
-			// System.out.println("----------------------------");
+			System.out.println("----------------------------");
 
 			// SOAP Request Headers
-			// System.out.println("----------SOAP Header Analysis----------");
+			System.out.println("----------SOAP Header Analysis----------");
 			if (incoming) {
 				SOAPEnvelope envelope = ctx.getMessage().getSOAPPart().getEnvelope();
 				SOAPHeader header = envelope.getHeader();
 				Node headerUser = ((Element) header).getElementsByTagName("ser:user_name").item(0);
 				Node headerPass = ((Element) header).getElementsByTagName("ser:pass_code").item(0);
 				if (null != headerUser) {
-					// System.out.println("Header: " + headerUser.getLocalName() + " " + headerUser.getTextContent());
+					System.out.println("Header: " + headerUser.getLocalName() + " " + headerUser.getTextContent());
 					headerUsername = headerUser.getTextContent();
 				}
 				if (null != headerPass) {
-					// System.out.println("Header: " + headerPass.getLocalName() + " " + headerPass.getTextContent());
+					System.out.println("Header: " + headerPass.getLocalName() + " " + headerPass.getTextContent());
 					headerPassword = headerPass.getTextContent();
 				}
 
@@ -96,13 +96,13 @@ public class ServiceHandler implements SOAPHandler<SOAPMessageContext> {
 			// Printing the whole message
 			Source soapPart = message.getSOAPPart().getContent();
 			if (incoming) {
-				// System.out.println("----------Request----------");
+				System.out.println("----------Request----------");
 			}
 			if (!incoming) {
-				// System.out.println("----------Response----------");
+				System.out.println("----------Response----------");
 			}
 			ServiceUtils.getTransformer().transform(soapPart, new StreamResult(System.out));
-			// System.out.println("----------------------------");
+			System.out.println("----------------------------");
 
 		} catch (Exception e) {
 			e.printStackTrace();

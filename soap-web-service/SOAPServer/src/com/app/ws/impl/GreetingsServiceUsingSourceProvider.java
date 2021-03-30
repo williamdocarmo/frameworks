@@ -18,7 +18,6 @@ import javax.xml.ws.ServiceMode;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceProvider;
 import javax.xml.ws.handler.MessageContext;
-import javax.xml.ws.soap.Addressing;
 
 import org.w3c.dom.Document;
 
@@ -26,7 +25,7 @@ import com.app.util.SOAPUtils;
 
 @WebServiceProvider (wsdlLocation = "Greetings.wsdl", portName = "GreetingsPortName", serviceName = "GreetingsService", targetNamespace = "http://com.app.greetings/user")
 @SOAPBinding(parameterStyle = ParameterStyle.WRAPPED, style = Style.DOCUMENT, use = Use.LITERAL)
-@ServiceMode(Mode.PAYLOAD)
+@ServiceMode(Mode.MESSAGE)
 public class GreetingsServiceUsingSourceProvider implements Provider<Source> {
 	
 	@Resource
