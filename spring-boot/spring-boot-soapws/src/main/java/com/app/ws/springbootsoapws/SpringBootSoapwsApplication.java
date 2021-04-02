@@ -9,5 +9,5 @@ public class SpringBootSoapwsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootSoapwsApplication.class, args);
 	}
-
+	
 }

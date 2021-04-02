@@ -19,31 +19,26 @@ public class MovieRatingsResource {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MovieRatingsResource.class);
 
-	private static Map<String, Integer> ratingsMapByMovie;
-
-	static {
-		ratingsMapByMovie = new HashMap<String, Integer>();
-		ratingsMapByMovie.put("mv1", 8);
-		ratingsMapByMovie.put("mv2", 9);
-		ratingsMapByMovie.put("mv3", 7);
-	}
-	
 	private static Map<String, UserRating> ratingsMapByUser;
 
 	static {
 		ratingsMapByUser = new HashMap<String, UserRating>();
-		ratingsMapByUser.put("u1", new UserRating(Arrays.asList(new Rating("mv1", 8), new Rating("mv3", 7))));
-		ratingsMapByUser.put("u2", new UserRating(Arrays.asList(new Rating("mv1", 3), new Rating("mv2", 6))));
-	}
-
-	@RequestMapping("/{movieId}")
-	public Rating getRating(@PathVariable(name = "movieId") String id) {
-		return new Rating(id, ratingsMapByMovie.get(id));
+		ratingsMapByUser.put("u1", new UserRating(Arrays.asList(new Rating("550", 8), new Rating("552", 7), new Rating("554", 6))));
+		ratingsMapByUser.put("u2", new UserRating(Arrays.asList(new Rating("551", 3), new Rating("555", 6), new Rating("553", 3))));
 	}
 
 	@RequestMapping("/users/{userId}")
 	public UserRating getRatingByUser(@PathVariable(name = "userId") String id) {
 		logger.info("getRatingByUser Invoked");
+		/**
+		if (id.equals("u2")) {
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		*/
 		return ratingsMapByUser.get(id);
 	}
 

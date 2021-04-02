@@ -2,8 +2,6 @@ package com.app.ws.springbootsoapws.config;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -24,8 +22,6 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class MDCSoapConfiguration extends WsConfigurerAdapter {
-	
-	private static final Logger logger = LoggerFactory.getLogger(MDCSoapConfiguration.class);
 	
 	@Autowired
 	private CustomEndpointInterceptor customEndpointInterceptor;
