@@ -7,16 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Profile("prod")
-public class GreetingControllerProdProfile {
+public class GreetingController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(GreetingControllerProdProfile.class);
+	private static final Logger logger = LoggerFactory.getLogger(GreetingController.class);
 
 	// Default value
 	@Value("${greeting.message: Default Hello World}")
@@ -26,10 +24,6 @@ public class GreetingControllerProdProfile {
 	@Value("${my.list.values}")
 	private List<String> listValues;
 	
-	// Map values
-	@Value("#{${my.map.values}}")
-	private Map<String, String> mapValues;
-	
 	@Autowired
 	private DBSettings dbSettings;
 
@@ -37,7 +31,6 @@ public class GreetingControllerProdProfile {
 	public String greetUser(@PathVariable(name = "user") String username) {
 		String message = "";
 		message += dbSettings.getConnection()+ " "+dbSettings.getHost()+" "+dbSettings.getPort()+ "<br />";
-		message += greetingMessage;
 		return message;
 	}
 
