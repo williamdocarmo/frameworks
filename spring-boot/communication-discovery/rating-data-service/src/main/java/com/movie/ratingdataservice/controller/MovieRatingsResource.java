@@ -24,7 +24,7 @@ public class MovieRatingsResource {
 	static {
 		ratingsMapByUser = new HashMap<String, UserRating>();
 		ratingsMapByUser.put("u1", new UserRating(Arrays.asList(new Rating("550", 8), new Rating("552", 7), new Rating("554", 6))));
-		ratingsMapByUser.put("u2", new UserRating(Arrays.asList(new Rating("551", 3), new Rating("555", 6), new Rating("553", 3))));
+		ratingsMapByUser.put("u2", new UserRating(Arrays.asList(new Rating("551", 3), new Rating("555", 6), new Rating("553", 2))));
 	}
 
 	@RequestMapping("/users/{userId}")

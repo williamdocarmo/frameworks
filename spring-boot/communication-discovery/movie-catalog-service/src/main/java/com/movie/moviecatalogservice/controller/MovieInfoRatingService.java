@@ -14,25 +14,25 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 @Service
 public class MovieInfoRatingService {
-	
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
 	@HystrixCommand(fallbackMethod = "getCatalogItemFallback", commandProperties = {
-			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
-			@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "6"),
-			@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
-			@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000")
-	})
+			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "500"),
+			@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+			@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "1000"),
+			@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "10") })
 	public MovieSummary getCatalogItem(String movieId) {
 		return restTemplate.getForObject("http://movie-info-service/movies/" + movieId, MovieSummary.class);
 	}
 
-	@HystrixCommand(fallbackMethod = "getUserRatingFallback")
+	@HystrixCommand(fallbackMethod = "getUserRatingFallback", threadPoolKey = "ratingPool", threadPoolProperties = {
+			@HystrixProperty(name = "coreSize", value = "20"), @HystrixProperty(name = "maxQueueSize", value = "10") })
 	public UserRating getUserRating(String userId) {
-		return restTemplate.getForObject("http://rating-data-service/ratings/users/"+userId, UserRating.class);
+		return restTemplate.getForObject("http://rating-data-service/ratings/users/" + userId, UserRating.class);
 	}
-	
+
 	public MovieSummary getCatalogItemFallback(String movieId) {
 		MovieSummary movieSummary = new MovieSummary();
 		movieSummary.setId(-1);
