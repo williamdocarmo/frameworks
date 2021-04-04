@@ -1,0 +1,12 @@
+greeting:
+  message: Hello!
+  
+server:
+  port: 9903
+  
+app:
+  name: Boot App
+  description: This is ${app.name}
+
+db:
+  port: 19042

@@ -1,0 +1,4 @@
+db:
+  connection: "{connectionString: 'DB String', username: 'new_username', password: 'new_password'}"
+  host: remote host
+  port: 15211
