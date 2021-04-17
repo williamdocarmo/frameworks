@@ -14,12 +14,12 @@ import com.app.kafka.model.User;
 
 public class JavaKafkaProducer {
 
-	private String BOOTSTRAP_SERVER = "localhost:9094";
-	private String TOPIC = "USER_TOPIC";
+	private String BOOTSTRAP_SERVER = "localhost:9092";
+	private String TOPIC = "NEW_USER_TOPIC";
 
 	public static void main(String[] args) throws Exception {
 		JavaKafkaProducer kafkaProducer = new JavaKafkaProducer();
-		kafkaProducer.testUserProducer();
+		kafkaProducer.testStringProducer();
 	}
 
 	private void testStringProducer() throws InterruptedException, ExecutionException {
@@ -50,7 +50,7 @@ public class JavaKafkaProducer {
 		Properties props = new Properties();
 		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER);
 		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "com.app.kafka.serializer.UserSerializer");
+		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 		/**
 		props.put(ProducerConfig.ACKS_CONFIG, "all");
 		props.put(ProducerConfig.RETRIES_CONFIG, 0);
