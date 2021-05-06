@@ -1,0 +1,330 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://mdc.ericsson.com/ws/soap/" targetNamespace="http://mdc.ericsson.com/ws/soap/"
+	elementFormDefault="qualified">
+
+	<xs:element name="userAuthenticationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="userAuthenticationResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="userAuthenticationData" type="tns:userAuthenticationData" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="userRegistrationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="userAuthorityData" type="tns:userAuthenticationData" />
+				<xs:element name="userAuthenticationData" type="tns:userAuthenticationData" />
+				<xs:element name="basicResourceDetails" type="tns:basicResourceDetails" />
+				<xs:element name="detailedResourceDetails" type="tns:detailedResourceDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="userRegistrationResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="changePasswordRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+				<xs:element name="currentPassword" type="xs:string" />
+				<xs:element name="newPassword" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="changePasswordResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getBasicResourceDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getBasicResourceDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="basicResourceDetails" type="tns:basicResourceDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateBasicResourceDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="basicResourceDetails" type="tns:basicResourceDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateBasicResourceDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateCurrentActivityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="currentActivityDetails" type="tns:currentActivityDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateCurrentActivityResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCurrentActivityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCurrentActivityResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="currentActivityDetails" type="tns:currentActivityDetails"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAllActivityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getAllActivityResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="currentActivityDetails" type="tns:currentActivityDetails"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getResourcesByManagerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getResourcesByManagerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="resources" type="xs:string" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getDetailedResourceDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="signum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getDetailedResourceDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="detailedResourceDetails" type="tns:detailedResourceDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getDetailedResourceDetailsByManagerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="managerSignum" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="getDetailedResourceDetailsByManagerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="detailedResourceDetails" type="tns:detailedResourceDetails"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateDetailedResourceDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="detailedResourceDetails" type="tns:detailedResourceDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="updateDetailedResourceDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getResourcesByRoleRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestHeader" type="tns:requestHeader" />
+				<xs:element name="role" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getResourcesByRoleResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseHeader" type="tns:responseHeader" />
+				<xs:element name="resources" type="xs:string" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="userAuthenticationData">
+		<xs:sequence>
+			<xs:element name="signum" type="xs:string" />
+			<xs:element name="password" type="xs:string" />
+			<xs:element name="role" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="basicResourceDetails">
+		<xs:sequence>
+			<xs:element name="signum" type="xs:string" />
+			<xs:element name="personNo" type="xs:string" />
+			<xs:element name="resourceName" type="xs:string" />
+			<xs:element name="emailId" type="xs:string" />
+			<xs:element name="phoneNo" type="xs:string" />
+			<xs:element name="currentProject" type="xs:string" />
+			<xs:element name="location" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="currentActivityDetails">
+		<xs:sequence>
+			<xs:element name="signum" type="xs:string" />
+			<xs:element name="currentProject" type="xs:string" />
+			<xs:element name="currentMilestone" type="xs:string" />
+			<xs:element name="currentActivities" type="xs:string" />
+			<xs:element name="challengesFaced" type="xs:string" />
+			<xs:element name="updateTimestamp" type="xs:dateTime" />
+			<xs:element name="deadline" type="xs:dateTime" />
+			<xs:element name="resourceName" type="xs:string" />
+			<xs:element name="status">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="green" />
+						<xs:enumeration value="red" />
+						<xs:enumeration value="amber" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="detailedResourceDetails">
+		<xs:sequence>
+			<xs:element name="signum" type="xs:string" />
+			<xs:element name="status" type="xs:string" />
+			<xs:element name="billable" type="xs:boolean" />
+			<xs:element name="deployable" type="xs:boolean" />
+			<xs:element name="joiningDate" type="xs:dateTime" />
+			<xs:element name="location" type="xs:string" />
+			<xs:element name="position" type="xs:string" />
+			<xs:element name="lineManager" type="xs:string" />
+			<xs:element name="jobStage" type="xs:string" />
+			<xs:element name="jobRole" type="xs:string" />
+			<xs:element name="rnamCoreFlexPool" type="xs:boolean" />
+			<xs:element name="cdCoreFlexPool" type="xs:boolean" />
+			<xs:element name="loanResource" type="xs:boolean" />
+			<xs:element name="skillset" type="xs:string" />
+			<xs:element name="projectStatus" type="xs:string" />
+			<xs:element name="region" type="xs:string" />
+			<xs:element name="currentProject" type="xs:string" />
+			<xs:element name="rolloffDate" type="xs:dateTime" />
+			<xs:element name="nextProject" type="xs:string" />
+			<xs:element name="expectedStartdate" type="xs:dateTime" />
+			<xs:element name="resignedOrMobility" type="xs:boolean" />
+			<xs:element name="fullyOccupied" type="xs:boolean" />
+			<xs:element name="updateTimestamp" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="requestHeader">
+		<xs:sequence>
+			<xs:element name="sourceSystem" type="xs:string" />
+			<xs:element name="timestamp" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="responseHeader">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string" />
+			<xs:element name="statusMessage" type="xs:string" />
+			<xs:element name="source" type="xs:string" />
+			<xs:element name="timestamp" type="xs:string" />
+			<xs:element name="responseTime" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

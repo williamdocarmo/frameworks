@@ -18,6 +18,13 @@ public class DrawingApplication {
 		String message = context.getMessage("circle.greeting", new String[] {"10", "20"}, "Default Greeting", Locale.ENGLISH);
 		System.out.println("Message: "+message);
 		
+		
+		Point anotherPoint = context.getBean("center", Point.class);
+		System.out.println("AnotherPoint: "+anotherPoint);
+		
+		CustomShape cshape = context.getBean("customShape", CustomShape.class);
+		System.out.println("cshape: "+cshape);
+		
 		context.close();
 	}
 

@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
-		<attributes>
-			<attribute name="test" value="true"/>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="src/main/webapp"/>
-	<classpathentry kind="src" path="src/test/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Tomcat10">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="output" path="target/classes"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/gmbal-api-only.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/ha-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.activation.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.annotation-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/javax.xml.soap-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/jaxws-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/management-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/mimepull.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/policy.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/saaj-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/stax2-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/streambuffer.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/txw2.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/webservices-api.jar"/>
+	<classpathentry kind="lib" path="C:/Workspaces/frameworks/soap-web-service/lib/woodstox-core.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
