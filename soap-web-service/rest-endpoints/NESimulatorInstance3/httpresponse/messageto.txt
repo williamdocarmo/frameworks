@@ -1,3 +1,0 @@
-<response>
-	<code>Message Accepted! Code: 0</code>
-</response>

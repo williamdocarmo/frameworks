@@ -1,0 +1,11 @@
+Embedded Data (Value type object)
+Attribute Override in Embedded Data (Complex data of same class)
+Primary Key
+	Comprising multiple elements (eg phone, email)
+	Generated
+	GenericGenerator (eg User1, User2, ...)
+	Sequential
+	Auto Generated- Integer, UUID
+	Table Generated
+	
+Element Collection, Collection ID and JoinTable

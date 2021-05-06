@@ -1,8 +1,0 @@
-Results For Entity ID: L97Bf  Result Code: 0
-
-Command Processing Summary:
-  User Command : ""processSingle AddCommand GVCORP CORPKEY L97Bf, CORPNAME %ban, CORPINFOMAP.CORP_ENABLED 1, CORPORATION_TYPE 2, OUTBOUND_PROC_TYPE 144, INBOUND_PROC_TYPE 144""
-  Duration     :         60 (ms)
-  Status       : SUCCESS
-
-=>
