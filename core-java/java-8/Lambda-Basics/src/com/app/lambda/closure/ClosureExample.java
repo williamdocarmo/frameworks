@@ -15,7 +15,6 @@ public class ClosureExample {
 
 	private static void doProcess(int a, Consumer<Integer> consumer) {
 		consumer.accept(a);
-
 	}
 
 }

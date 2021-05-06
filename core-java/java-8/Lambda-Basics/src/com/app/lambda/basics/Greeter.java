@@ -2,6 +2,8 @@ package com.app.lambda.basics;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class Greeter {
@@ -21,9 +23,21 @@ public class Greeter {
 		List<String> l = Arrays.asList("abc", "abcde", "x");
 		l.stream().map(s -> s.length()).forEach(x -> System.out.println(x));
 		
+		get(20, x -> System.err.println(x * 2));
+		
+		int i = 20;
+		
+		
+	}
+	
+	private static void get (int input, Consumer<Integer> consumer) {
+		consumer.accept(input);
 	}
 	
 }
+
+
+
 
 /**
 greetingFunction = () -> System.out.println("Hello World");

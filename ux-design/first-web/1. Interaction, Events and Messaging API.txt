@@ -1,0 +1,11 @@
+Battery Status
+Clipboard API
+Cross Document Messaging
+Device and Screen Orientation
+Full Screen
+
+Geolocation
+Media Capture
+Notification
+Touch Events
+Vibration
