@@ -1,7 +1,9 @@
 package com.stream;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class StreamAPI {
@@ -9,7 +11,8 @@ public class StreamAPI {
 	private static StreamAPI api = new StreamAPI();
 
 	public static void main(String[] args) {
-		api.map();
+		// api.map();
+		api.filterMapByAttribute();
 	}
 
 	private void map() {
@@ -24,8 +27,18 @@ public class StreamAPI {
 		// System.out.println(list.stream().reduce(0, (c, e) -> c + e));
 		
 		
-		optionalDemo();
-
+	// 	optionalDemo();
+// 
+	}
+	
+	private void filterMapByAttribute() {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("1", "One");
+		map.put("2", "Two");
+		map.put("3", "Three");
+		map.put("_2", "Two");
+		map.put("4", "Four");
+		map.keySet().stream().filter((k) -> map.get(k).equals("Two")).forEach(System.out::println);
 	}
 
 	private void optionalDemo() {
@@ -71,6 +84,8 @@ public class StreamAPI {
 		people.stream().filter((p) -> p.getPersonAge() >= 30)
 				.forEach(p -> System.out.println(p.getPersonName() + " : " + p.getPersonAge()));
 	}
+	
+	
 
 	private void addAllElementsAfterMultiplyingBy5() {
 		List<Integer> list = Arrays.asList(7, 10, 15, 27, 5, 9, 11, 22, 45, 20);
