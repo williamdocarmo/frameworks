@@ -1,5 +1,0 @@
-Sections - Head, Body, Header, Footer, Paragraph
-Images
-User Input- Text, Password, Radio/checkboxes, Dropdowns, Sliders
-Data presentation - list, table
-Links and navigation

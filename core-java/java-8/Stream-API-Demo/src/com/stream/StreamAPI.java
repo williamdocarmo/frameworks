@@ -12,7 +12,13 @@ public class StreamAPI {
 
 	public static void main(String[] args) {
 		// api.map();
-		api.filterMapByAttribute();
+		// api.filterMapByAttribute();
+		
+		double a = 290.05;
+		int b = 100;
+		byte c = (byte) a;
+		byte d = (byte) b;
+		System.out.println(c + " "+d);
 	}
 
 	private void map() {
