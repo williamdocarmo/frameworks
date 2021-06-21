@@ -3,7 +3,6 @@ package com.app.lambda.exc;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BooleanSupplier;
 import java.util.function.Predicate;
 
 public class ListLambdaExerciseJava8 {

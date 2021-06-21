@@ -1,0 +1,47 @@
+h1 {
+    background: yellow;
+    font-size: xx-large;
+    /* padding: 60px 10px 20px 30px; */
+    font-family: 'segoe ui';
+    font-weight: 600;
+    font-style: italic;
+
+    margin-top: 3em;
+    margin-bottom: 2em;
+    margin-right: 4em;
+    margin-left: 1em;
+
+    cursor: cell;
+    outline-color: blue;
+    outline-width: 5px;
+}
+
+p {
+    /* Fonts */
+    font-family: 'century gothic';
+    font-size: 30px;
+    font-smooth: initial;
+    font-style: oblique;
+    
+    /* Text Modification */
+    text-align: center;
+    color: midnightblue;
+    background: navajowhite;
+    text-indent: 10mm;
+    text-transform: capitalize;
+    line-height: 60px;
+    letter-spacing: 10px;
+    word-spacing: 30px;
+    text-decoration: underline;
+
+    /* Boxing */
+    border: maroon dashed 10px;
+    border-radius: 25px;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    
+}

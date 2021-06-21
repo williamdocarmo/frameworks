@@ -1,0 +1,5 @@
+Blob URLs
+File API
+File Reader
+Indexed DB
+Local Storage

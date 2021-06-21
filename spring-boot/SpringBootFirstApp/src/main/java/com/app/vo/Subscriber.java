@@ -1,7 +1,10 @@
 package com.app.vo;
 
+import javax.validation.constraints.Size;
+
 public class Subscriber {
 	
+	@Size(min = 8, max = 8, message = "State Is Not Valid")
 	private String voiceGSM;
 	
 	private String voiceLTE;

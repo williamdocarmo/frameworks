@@ -1,0 +1,6 @@
+script: async and defer
+Content Editable
+Drag and Drop
+History
+Promises
+Service Workers 

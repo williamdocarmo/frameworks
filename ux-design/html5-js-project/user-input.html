@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="">
+			<title>User Input</title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<label for="usernamed">User Name</label>
+			<input type="text" name="username" id="username" placeholder="Your User Name" required/>
+			
+			<br /><label for="password">Password</label>
+			<input type="password" name="password" id="password" placeholder="Your Password" size="6"/>
+			<input type="hidden" id="secretToken" name="secretToken" value="90616513556">
+			<br /><br />
+			
+			<br /><label for="answer">Select the correct answer:</label>
+			<br /><input type= "checkbox" value="Option A" name="answer" id="answer" checked/>Option A
+			<br /><input type= "checkbox" value="Option B" name="answer" id="answer"/>Option B
+			<br /><input type= "checkbox" value="Option C" name="answer" id="answer"/>Option C
+			<br /><input type= "checkbox" value="Option D" name="answer" id="answer"/>Option D
+			<br /><br />
+			
+			<br /><label for="citizen">Are you Indian citizen:</label>
+			<br /><input type="radio" value="ind" name="citizen" id="citizenship" />Yes, Indian
+			<br /><input type="radio" value="nri" name="citizen" id="citizenship" />No, NRI
+			<br /><input type="radio" value="dbl" name="citizen" id="citizenship" />Dual Citizenship
+			<br /><br />
+			
+			<br /><label for="colour">Select your favourite colour:</label>
+			<br /><input type="color" name="colour" id="colour" />
+			<br /><br />
+
+			<br /><label for="file">Upload your resume:</label>
+			<br /><input type="file" name="file" id="file" />
+			<br /><br />
+
+			<br /><label for="file">Upload your educational data (multiple files):</label>
+			<br /><input type="file" name="files" id="files" multiple/>
+			<br /><br />
+			
+			<br /><label for="dob">Select your date of birth:</label>
+			<br /><input type="date" name="dob" id="dob" min="1970-01-01" max="2021-01-01" />
+			<br /><br />
+			
+			<br /><label for="email">Email ID:</label>
+			<br /><input type="email" name="email" id="email" placeholder="email@domain.com"/>
+			<br /><br />
+
+			<br /><label for="gsearch">Search Google:</label>
+			<br /><input type="search" name="gsearch" id="gsearch" minlength="3" maxlength="15" />
+			<br /><br />
+			
+			<br /><label for="age">What is your age?</label>
+			<br /><input type="number" name="age" id="age" min="18" max="60" />
+			<br /><br />
+			
+			<br />Share your experience:
+			<br /><textarea rows="6" cols="50" readonly disabled>This supports large data!!</textarea>
+			<br /><br />
+			
+			<br /><label for="salaryrange">Select your salary range:</label>
+			<br /><input type="range" name="salaryrange" id="salaryrange" />
+			<br /><br />
+			
+			<br/><label for="programming">Select your favourite programming language</label>
+			<br>
+			<select name="programming" id="programming">
+				<option value="javascript">Javascript</option>
+				<option value="java">Java</option>
+				<option value="python">Python</option>
+			</select>
+			<br /><br />
+			
+			<br /><input type="reset" value="Reset Form" />
+			<input type="submit" value="Submit Form" onclick="alert('Form will be submitted!')" />
+		</form>		
+	</body>
+</html>

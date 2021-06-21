@@ -1,0 +1,5 @@
+High Resolution Time
+Navigation Time
+Page Visibility
+User Timing
+Web Workers

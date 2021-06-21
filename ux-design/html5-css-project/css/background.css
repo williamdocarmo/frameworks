@@ -1,0 +1,20 @@
+.big-img {
+    background-image: url('../images/bg.jpg');
+    background-size: contain;
+}
+
+div {
+    height: 400px;
+    width: 400px;
+    color: red;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    /* background-attachment: fixed; */
+}
+
+.banner {
+    background: linear-gradient(blue, green);
+    /* background: linear-gradient(to top, blue, green); */
+    background: linear-gradient(315deg, blue, green);
+}
+

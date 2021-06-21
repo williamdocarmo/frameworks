@@ -1,0 +1,38 @@
+p::before{
+    content: "Hello World! ";
+    font-weight: bold;
+    font-size: 2em;
+    display: block;
+    background: black;
+    color: brown;
+}
+
+body::after{
+    content: "Good bye! ";
+    font-weight: bold;
+    font-size: 2em;
+    display: block;
+    background: turquoise;
+    color: crimson;
+}
+
+p::first-line{
+    letter-spacing: 25px;
+}
+
+p:hover {
+    font-size: xx-large;
+}
+
+h1:hover {
+    color: blue;
+    background: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: crimson;
+}

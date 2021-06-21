@@ -1,0 +1,42 @@
+/* Selectors */
+h1{
+    color:rgb(255, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2, h3 {
+    color: cadetblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    color: darkslateblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Class Selector */
+.p1{
+    color:rgb(255, 94, 0);
+    font-family: century-gothic;
+    text-align: center;
+} 
+
+/* ID Selector */
+#firstheader {
+    color: magenta;
+}
+
+#secondheader {
+    color: maroon;
+    font-size: 100px;
+    background-color: navajowhite;
+}
+
+div {
+    color: blue;
+    background: grey;
+}
+
+span {
+    text-transform: uppercase;
+}

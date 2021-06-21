@@ -1,0 +1,58 @@
+How to insert a queue in a weblogic server
+
+A. create a JMS Server
+Services > Messaging > JMS Servers 
+
+-Select New 
+-Name: OrderJMSServer 
+-Persistent Store: (none) 
+-Target: kvikoc_admin
+-Finish 
+-------------------------------------
+B. Create a JMS Module 
+Services > Messaging > JMS Modules 
+
+-Select New 
+-Name: OrderJMSModule 
+-Leave the other options empty 
+-Targets: kvikoc_admin 
+-Press Next 
+-Leave “Would you like to add resources to this JMS system module” unchecked and  press Finish
+-------------------------------------
+C. Create a SubDeployment
+Services > Messaging > JMS Modules 
+
+-Select OrderJMSModule 
+-Select the Subdeployments  tab and New 
+-Subdeployment Name: OrderSubdeployment 
+-Press Next 
+-Select the OrderJMSServer created earlier 
+-Press Finish 
+-------------------------------------
+D. Create a Connection Factory
+Services > Messaging > JMS Modules 
+
+-Select OrderJMSModule  and press New 
+-Select Connection Factory  and Next 
+-Name: OrderConnectionFactory 
+-JNDI Name: jms/OrderConnectionFactory 
+-Leave the other values at default 
+-On the Targets page, select the Advanced Targeting  button and select OrderSubdeployment 
+-Press Finish 
+-------------------------------------
+E. Create a JMS Queue 
+-Services > Messaging > JMS Modules 
+
+-Select OrderJMSModule  and press New 
+-Select Queue and Next 
+-Name: OrderJMSQueue
+-JNDI Name: jms/OrderJMSQueue
+-Template: None
+-Press Next 
+-Subdeployments: OrderSubdeployment 
+-Finish 
+
+
+Corresponding classes in OCAPP:
+QueueReceive
+OsmBO

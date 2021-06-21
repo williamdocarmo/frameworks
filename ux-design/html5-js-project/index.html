@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="">
+	<title>First Web Page!</title>
+</head>
+
+<body>
+	<header>
+		<h1 id="top" onclick="updateFirstline()">Hello Javascript!</h1>
+	</header>
+
+
+
+	<button id="firstJs" onclick="updateFirstline()">Test First JS</button>
+	<br />
+	<textarea id="firstLine" disabled></textarea>
+
+	<p>String Concat Example 1</p>
+	<input type="text" id="firstName" onchange="printName()"></input>
+	<input type="text" id="lastName" onchange="printName()"></input>
+	<textarea id="fullName" disabled></textarea>
+
+	<p>String Concat Example 2</p>
+	<input type="text" id="fname" onchange="printFullname()"></input>
+	<input type="text" id="lname" onchange="printFullname()"></input>
+	<textarea id="completeName" disabled></textarea>
+
+	<p>Constant Example</p>
+	<input type="text" id="mrp" onchange="printFinalPrice()"></input>
+	<textarea id="finalPrice" disabled></textarea>
+
+	<p>String Example</p>
+	<input type="text" id="value1"></input>
+	<br />
+	<button id="btn1" onclick="printLength()">Print Length</button>
+	<button id="btn2" onclick="upperCase()">Print in Uppercase</button>
+	<button id="btn3" onclick="substring(1)">SubString</button>
+	<br />
+	<textarea id="demoRes" disabled></textarea>
+
+
+	<p>Integer Example</p>
+	<input type="text" id="number1"></input>
+	<input type="text" id="number2"></input>
+	<br />
+	<button id="btn4" onclick="printSum()">Print Sum</button>
+	<br />
+	<textarea id="sum" disabled></textarea>
+
+	<p>Boolean Example</p>
+	<input type="text" id="x"></input>
+	<input type="text" id="y"></input>
+	<br />
+	<button id="btn4" onclick="checkEquality()">Check Equality</button>
+	<br />
+	<textarea id="checkEquality" disabled></textarea>
+
+
+
+	<br/> <br/> <br />
+	<textarea id="result" disabled></textarea>
+
+
+
+
+
+	<script src="./utils.js"></script>
+	<script src="./main.js"></script>
+	
+
+</body>
+
+</html>
