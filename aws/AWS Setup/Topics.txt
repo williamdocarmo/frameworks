@@ -1,0 +1,36 @@
+Introduction:
+	Service Models
+	Deployment Models
+	Fundamentals of AWS Cloud
+	
+Compute Service:
+	AWS EC2
+	Elastic Beanstalk
+	Lambda
+	
+Storage Service:
+	AWS S3
+	EFS
+	Glacier
+	EBS
+	
+Networking Service:
+	VPC
+	Route 53
+	Cloudfront
+	
+Monitoring and Management:
+	Cloud Watch
+	Cloud Formation
+	Load Balancer
+	
+Security Services:
+	IAM
+	
+Database:
+	AWS Redshift
+	
+Devops:
+	AWS Code Pipeline
+	AWS Code Commit
+	AWS Code Build
