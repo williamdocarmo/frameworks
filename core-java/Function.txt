@@ -1,0 +1,13 @@
+Consumer: void accept ( Object )
+
+BiConsumer: void accept ( Object, Object )
+
+Function: Object apply ( Object )
+
+BiFunction: Object apply ( Object, Object )
+
+Predicate: boolean test ( Object )
+
+BiPredicate: boolean test ( Object, Object )
+
+Supplier: Object get ( )
